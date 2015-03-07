@@ -73,6 +73,8 @@ public class DnDCharacter {
 		{
 			//Add alignment gen here
 		}
+		
+		
 	}
 	
 	// the get and set for Character NAME
