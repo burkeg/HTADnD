@@ -32,13 +32,13 @@ public class DnDCharacter {
 		chaLevel = clevel;
 	}
 	
-	public DnDCharacter(String cName, String cRace, String cClass, String cDiety,
+	public DnDCharacter(String cName, String cRace, String cClass, String cDeity,
 			String cAlign, int cLevel)
 	{
 		chaName = cName;
 		chaRace = cRace;
 		chaClass = cClass;
-		chaDiety = cDiety;
+		chaDiety = cDeity;
 		chaAlignment = cAlign;
 		chaLevel = cLevel;
 	}
@@ -49,14 +49,22 @@ public class DnDCharacter {
 		//Randomize all of the character's elements that haven't been set yet.
 		if(chaName.length() <= 0)
 		{
-			chaName = NameGenerator.makeName();
+			NameGenerator gen = new NameGenerator();
+			chaName = gen.makeName();
 			chaName = chaName.substring(0,1).toUpperCase() + chaName.substring(1); //Capitalize the first letter of the name
 		}
 		
 		if(chaRace.length() <= 0)
 		{
-			
+			chaRace = Main.elements.getRandom(Main.elements.getListRaces()); 
 		}
+		
+		if(chaClass.length() <= 0)
+		{
+			chaClass = Main.elements.getRandom(Main.elements.getListClasses());
+		}
+		
+		if(chaDeity)
 	}
 	
 	// the get and set for Character NAME

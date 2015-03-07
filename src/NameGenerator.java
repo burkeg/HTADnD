@@ -14,10 +14,10 @@ public class NameGenerator {
 		System.out.println("hi");
 	}
 	
-	/*public NameGenerator() {
-		this.letterRangeLower = 3;
-		this.letterRangeUpper = 5;
-	}*/
+	public NameGenerator() {
+		//this.letterRangeLower = 3;
+		//this.letterRangeUpper = 5;
+	}
 
 	public String getVowel() {
 
