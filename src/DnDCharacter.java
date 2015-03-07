@@ -43,6 +43,21 @@ public class DnDCharacter {
 		chaLevel = cLevel;
 	}
 	
+	//Randomize character
+	public void randomizeCharacter()
+	{
+		//Randomize all of the character's elements that haven't been set yet.
+		if(chaName.length() <= 0)
+		{
+			chaName = NameGenerator.makeName();
+			chaName = chaName.substring(0,1).toUpperCase() + chaName.substring(1); //Capitalize the first letter of the name
+		}
+		
+		if(chaRace.length() <= 0)
+		{
+			
+		}
+	}
 	
 	// the get and set for Character NAME
 	public String getCName()

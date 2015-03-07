@@ -1,38 +1,50 @@
 public class NameGenerator {
+	
+	String[] conBlends = { "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr",
+			"gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk",
+			"sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr" };
+	String[] vowBlends = { "ai", "au", "aw", "ay", "ea", "ee", "ei", "eu",
+			"ew", "ey", "ie", "oi", "oo", "ou", "ow", "oy" };
+	int letterRangeLower;
+	int letterRangeUpper;
+	
+	public NameGenerator(int letterRangeLower, int letterRangeUpper) {
+		this.letterRangeLower = letterRangeLower;
+		this.letterRangeUpper = letterRangeUpper;
+		System.out.println("hi");
+	}
+	
+	/*public NameGenerator() {
+		this.letterRangeLower = 3;
+		this.letterRangeUpper = 5;
+	}*/
 
-	static String[] conBlends = { "br", "ch", "ck", "cl", "cr", "dr", "fl",
-			"fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh",
-			"sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh",
-			"wr" };
-	static String[] vowBlends = { "ai", "au", "aw", "ay", "ea", "ee", "ei",
-			"eu", "ew", "ey", "ie", "oi", "oo", "ou", "ow", "oy" };
-
-	public static String getVowel() {
+	public String getVowel() {
 
 		int rand = (int) (Math.random() * vowBlends.length);
 
 		return vowBlends[rand];
 	}
 
-	public static String getConsonant() {
+	public String getConsonant() {
 
 		int rand = (int) (Math.random() * conBlends.length);
 
 		return conBlends[rand];
 	}
 
-	public static String makeName() {
+	public String makeName() {
 		String name = "";
-		int weightedValue = 0;
-		int rand = (int) (Math.random() * 2 + 3);
+		boolean startVowel = false;
+		int rand = (int) (Math.random() * (letterRangeUpper - letterRangeLower) + letterRangeLower);
 		for (int i = 0; i < rand; i++) {
 			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
-			if (weightedValue < 0) {
+			if (startVowel) {
 				name += getVowel();
-				weightedValue++;
+				startVowel = true;
 			} else {
 				name += getConsonant();
-				weightedValue--;
+				startVowel = false;
 			}
 		}
 
