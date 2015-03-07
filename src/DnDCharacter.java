@@ -1,3 +1,8 @@
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.io.IOException;
+
 public class DnDCharacter {
 	private String chaName = new String();
 	private String chaRace = new String();
