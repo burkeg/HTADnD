@@ -24,9 +24,10 @@ public class NameGenerator {
 	public static String makeName() {
 		String name = "";
 		int weightedValue = 0;
-		int rand = (int)(Math.random() * 2 + 3);
+		int rand = (int) (Math.random() * 2 + 3);
 		for (int i = 0; i < rand; i++) {
-			if (Math.random() + (weightedValue* 5.0/10.0)< 0.5) {
+			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
+			if (weightedValue < 0) {
 				name += getVowel();
 				weightedValue++;
 			} else {
