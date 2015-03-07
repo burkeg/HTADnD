@@ -1,12 +1,19 @@
 import java.util.Random;
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.io.IOException;
+
 public class Chapter
 {
 	private int chaptAdvID; //this is the Chapter Adventure ID. it is used to determine whether it is an assassination, monster battle, etc
 	private int chaptStoryID; //this is the story ID. its used for generating flavor text around the adventureID
-	private int playerCount;; //this is the count of players
+	private int playerCount; //this is the count of players
 	private int enemyCount; // this is the count of enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once the program compiles
 	private int bossCount; // this is the count of boss enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once compiled.
 	
+	List<DnDCharacter> npcAntagonist = new ArrayList();
+	List<DnDCharacter> npcNeutral = new ArrayList();
 	
 	public Chapter(int players)
 	{
@@ -16,6 +23,8 @@ public class Chapter
 		enemyCount = playerCount + 1 + (randNum(((playerCount/2)*-1), (playerCount/2))); // a complicated decision of how many enemies there are.
 		// its usually about half give or take another half. 
 		bossCount = playerCount/2 + (randNum(((playerCount/3)*-1), (playerCount/3)));
+		
+		
 		
 		switch (chaptAdvID)
 		{
