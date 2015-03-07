@@ -26,10 +26,20 @@ public class Building {
 		return buildingType;
 	}
 
+	void setRandomWeight(int weight)
+	{
+		if (weight >= 0)
+		{
+			randomWeight = weight;
+		}
+	}
+	
 	int getRandomWeight()
 	{
 		return randomWeight;
 	}
+
+	
 	
 	void setBuildingMin(int min)
 	{
@@ -50,6 +60,11 @@ public class Building {
 		{
 			buildingMax = max;
 		}
+	}
+	
+	int getBuildingMax()
+	{
+		return buildingMax;
 	}
 
 	//METHODS:

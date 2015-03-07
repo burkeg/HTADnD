@@ -107,7 +107,7 @@ public class DnDCharacter {
 	}
 	public void levelUp(int addlevel)
 	{
-		chaLevel + addlevel;
+		chaLevel += addlevel;
 	}
 	
 	
