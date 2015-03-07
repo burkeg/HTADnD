@@ -100,4 +100,15 @@ public class DnDCharacter {
 		chaLevel = cLevel;
 	}
 	
+	//the levelup methods. if no input is supplied, it is assumed you level up by one level.
+	public void levelUp()
+	{
+		chaLevel++;
+	}
+	public void levelUp(int addlevel)
+	{
+		chaLevel + addlevel;
+	}
+	
+	
 }
