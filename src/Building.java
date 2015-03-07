@@ -23,7 +23,7 @@ public class Building {
 	
 	String getBuildingType()
 	{
-		return builtingType;
+		return buildingType;
 	}
 
 	int getRandomWeight()
@@ -51,8 +51,7 @@ public class Building {
 			buildingMax = max;
 		}
 	}
-	}
-	
+
 	//METHODS:
 	//Determine building type
 }
