@@ -5,12 +5,18 @@ import java.util.ArrayList;
 public class Village {
 	//MEMBERS:
 	//Village total size
-	int villageSize;
+	private int villageSize;
 	
 	//Village buildings (TODO: BUILDING CLASS)
-	List<Building> villageBuildings;
+	private List<Building> villageBuildings;
 	
-	//Any other things?
+	int getVillageSize()
+	{
+		return villageSize;
+	}
+	
+	//no setVillageSize, this should be computed in the methods.
+	
 	
 	//METHODS:
 	//Create village
