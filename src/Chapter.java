@@ -8,21 +8,22 @@ public class Chapter
 {
 	private int chaptAdvID; //this is the Chapter Adventure ID. it is used to determine whether it is an assassination, monster battle, etc
 	private int chaptStoryID; //this is the story ID. its used for generating flavor text around the adventureID
-<<<<<<< HEAD
 
-=======
 	private int playerCount; //this is the count of players
 	private int enemyCount; // this is the count of enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once the program compiles
 	private int bossCount; // this is the count of boss enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once compiled.
 	
 	List<DnDCharacter> npcAntagonist = new ArrayList();
 	List<DnDCharacter> npcNeutral = new ArrayList();
->>>>>>> origin/master
-	
+
 	public Chapter(int players)
 	{
 		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
 		chaptStoryID = randNum(0, 2); //a random decision of the story flavor text
+		
+		
+		List<DnDCharacter> npcAntagonist = new ArrayList();
+		List<DnDCharacter> npcNeutral = new ArrayList();
 		
 		
 		
