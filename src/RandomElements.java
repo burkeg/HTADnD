@@ -36,9 +36,8 @@ public class RandomElements {
 	//Select a random element from the list specified when called
 	public String getRandom(List<String> getList)
 	{
-		String output = "";
-		
-		return output;
+		int index = Main.randNum(0,getList.size());
+		return getList.get(index);
 	}
 	
 	public List<String> getListRaces()
