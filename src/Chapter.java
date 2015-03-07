@@ -13,18 +13,15 @@ public class Chapter
 	private int enemyCount; // this is the count of enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once the program compiles
 	private int bossCount; // this is the count of boss enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once compiled.
 	
-	List<DnDCharacter> npcAntagonist = new ArrayList();
-	List<DnDCharacter> npcNeutral = new ArrayList();
+	public List<DnDCharacter> npcBosses = new ArrayList();
+	public List<DnDCharacter> npcEnemies = new ArrayList();
 
-	public Chapter(int players)
+	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies)
 	{
 		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
 		chaptStoryID = randNum(0, 2); //a random decision of the story flavor text
-		
-		
-		List<DnDCharacter> npcAntagonist = new ArrayList();
-		List<DnDCharacter> npcNeutral = new ArrayList();
-		
+		npcBosses = bosses;
+		npcEnemies = enemies;
 		
 		
 		switch (chaptAdvID)
