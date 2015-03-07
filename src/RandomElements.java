@@ -11,6 +11,7 @@ public class RandomElements {
 	public List<String> listAdjectivesPerson = new ArrayList<String>(); //List of adjectives that describe a person
 	public List<String> listAdjectivesObject = new ArrayList<String>(); //List of adjectives that describe a thing
 	public List<String> listGoals = new ArrayList<String>(); //List of goals that a person might have.
+	public string[] 
 	public String[] chapterSubjects = {"Assassination Mission", "Steal Item", "Defend Place",
 			"Defend People", "Convince NPC", "Slay Monsters (Massacre)",
 			"Slay Monsters (Boss)", "Massacre Innocents", "Escape",
