@@ -1,6 +1,10 @@
 
-public class Character {
-	public static void main(String[] args) {
-		System.out.print("Hi.");
+public class DnDCharacter {
+
+	public static void main(String[] args) 
+	{
+
+
 	}
+
 }
