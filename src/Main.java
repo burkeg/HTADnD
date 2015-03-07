@@ -18,7 +18,15 @@ public class Main {
 							// named. the count of these are NOT considered in
 							// the enemycount.
 
-		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
+		elements.loadListElements(elements.getListClasses(), "src/resource/classes.txt");
+		System.out.println(elements.getListClasses().size());
+		for(int i = 0; i < 10; i++)
+		{
+			System.out.println(elements.getListClasses().get(i));
+		}
+
+		
+/*		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
 		// determines the amount of enemies for each encounter.
 		// these are "guards" and other name-less
 		bossCount = playerCount / 2 + (randNum(((playerCount / 3) * -1), (playerCount / 3))); 
@@ -37,7 +45,7 @@ public class Main {
 		for(int i = 0; i < enemyCount; i++)
 		{
 			enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
-		}
+		}*/
 }
 
 	static int randNum(int min, int max) {

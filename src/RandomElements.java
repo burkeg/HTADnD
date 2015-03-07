@@ -24,7 +24,8 @@ public class RandomElements {
 	{
 		try
 		{
-			listElements = FileHandling.readFile(fileName);
+			listElements.clear(); //Clear listElements' contents
+			listElements.addAll(FileHandling.readFile(fileName)); //Add the contents of the file
 		}
 		
 		catch (IOException ex)
