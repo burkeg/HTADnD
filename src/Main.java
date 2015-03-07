@@ -22,6 +22,9 @@ public class Main {
 		
 		List<DnDCharacter> enemies = new ArrayList<DnDCharacter>();
 		List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
+
+
+
 		
 		for(int i = 0; i < bossCount; i++)
 		{
@@ -35,7 +38,6 @@ public class Main {
 			//enemies.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
 		}
 		
-		for(int )
 		
 	}
 
