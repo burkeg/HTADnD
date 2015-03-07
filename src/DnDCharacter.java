@@ -7,7 +7,7 @@ public class DnDCharacter {
 	private String chaName = new String();
 	private String chaRace = new String();
 	private String chaClass = new String();
-	private String chaDiety = new String();
+	private String chaDeity = new String();
 	private String chaAlignment = new String();
 	private int chaLevel = 0;
 	
@@ -32,13 +32,13 @@ public class DnDCharacter {
 		chaLevel = clevel;
 	}
 	
-	public DnDCharacter(String cName, String cRace, String cClass, String cDiety,
+	public DnDCharacter(String cName, String cRace, String cClass, String cDeity,
 			String cAlign, int cLevel)
 	{
 		chaName = cName;
 		chaRace = cRace;
 		chaClass = cClass;
-		chaDiety = cDiety;
+		chaDeity = cDeity;
 		chaAlignment = cAlign;
 		chaLevel = cLevel;
 	}
@@ -49,13 +49,29 @@ public class DnDCharacter {
 		//Randomize all of the character's elements that haven't been set yet.
 		if(chaName.length() <= 0)
 		{
-			chaName = NameGenerator.makeName();
+			NameGenerator gen = new NameGenerator();
+			chaName = gen.makeName();
 			chaName = chaName.substring(0,1).toUpperCase() + chaName.substring(1); //Capitalize the first letter of the name
 		}
 		
 		if(chaRace.length() <= 0)
 		{
-			
+			chaRace = Main.elements.getRandom(Main.elements.getListRaces()); 
+		}
+		
+		if(chaClass.length() <= 0)
+		{
+			chaClass = Main.elements.getRandom(Main.elements.getListClasses());
+		}
+		
+		if(chaDeity.length() <= 0)
+		{
+			chaDeity = Main.elements.getRandom(Main.elements.getListDeities());
+		}
+		
+		if(chaAlignment.length() <= 0)
+		{
+			//Add alignment gen here
 		}
 	}
 	
@@ -90,14 +106,14 @@ public class DnDCharacter {
 		chaClass = cClass; 
 	}
 	
-	// the get and set for character DIETY
-	public String getCDiety()
+	// the get and set for character DEITY
+	public String getCDeity()
 	{
-		return chaDiety;
+		return chaDeity;
 	}
-	public void setCDiety(String cDiety)
+	public void setCDiety(String cDeity)
 	{
-		chaDiety = cDiety; 
+		chaDeity = cDeity; 
 	}
 	
 	// the get and set for character ALIGNMENT
