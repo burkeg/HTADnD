@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
+
 		int playerCount = 0; //this is the count of players
 	    int enemyCount = 0; // this is the count of enemies that should be made for the adventure. these are guards and other nameless characters. 
 	    int bossCount = 0; // this is the count of enemies that are actually named. the count of these are NOT considered in the enemycount.
@@ -19,15 +19,9 @@ public class Main {
 		
 		List<String> EnemyNames = new ArrayList<String>();
 		
+	}
 		
-		
-=======
-		// NameGenerator n = new NameGenerator();
-		NameGenerator locationName = new NameGenerator(15, 20);
-		for (int i = 0; i < 11; i++) {
-			System.out.println(locationName.makeName());
->>>>>>> origin/master
-		}
+
 	
 	 static int randNum(int min, int max)
 	{
