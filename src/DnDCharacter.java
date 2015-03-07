@@ -2,8 +2,8 @@ public class DnDCharacter {
 	private String chaName = new String();
 	private String chaRace = new String();
 	private String chaClass = new String();
-	private String chaDiety = 0;
-	private String chaAlignment = 0;
+	private String chaDiety = new String();
+	private String chaAlignment = new String();
 	private int chaLevel = 0;
 	
 	// TODO Auto-generated method stub
