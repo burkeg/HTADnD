@@ -55,4 +55,21 @@ public class NameGenerator {
 
 		return name;
 	}
+	
+	public static String makeName(int letterRangeLower, int letterRangeUpper, boolean startVowel) {
+		String name = "";
+		int rand = (int) (Math.random() * (letterRangeUpper - letterRangeLower) + letterRangeLower);
+		for (int i = 0; i < rand; i++) {
+			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
+			if (startVowel) {
+				name += getVowel();
+				startVowel = true;
+			} else {
+				name += getConsonant();
+				startVowel = false;
+			}
+		}
+
+		return name;
+	}
 }
