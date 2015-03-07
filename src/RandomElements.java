@@ -4,16 +4,20 @@ import java.io.IOException;
 
 //Class holding the list of elements used in randomization
 public class RandomElements {
-	public List<String> listRaces = new ArrayList<String>();
-	public List<String> listClasses = new ArrayList<String>();
-	public List<String> listDeities = new ArrayList<String>();
+	public List<String> listRaces = new ArrayList<String>(); //List of races
+	public List<String> listClasses = new ArrayList<String>(); //List of classes
+	public List<String> listDeities = new ArrayList<String>(); //List of deities
+	public List<String> listAdjectivesPerson = new ArrayList<String>(); //List of adjectives that describe a person
+	public List<String> listAdjectivesObject = new ArrayList<String>(); //List of adjectives that describe a thing
+	public List<String> listGoals = new ArrayList<String>(); //List of goals that a person might have.
 	
-	public void loadListRaces(String fileName)
+	//Load the list elements for the selected list. 
+	//Separate from FileHandling.readFile for extensibility.
+	public void loadListElements(List<String> listElements, String fileName)
 	{
-		FileHandling handler = new FileHandling();
 		try
 		{
-			listRaces = handler.readFile(fileName);
+			listElements = FileHandling.readFile(fileName);
 		}
 		
 		catch (IOException ex)
@@ -22,31 +26,4 @@ public class RandomElements {
 		}
 	}
 	
-	public void loadListClasses(String fileName)
-	{
-		FileHandling handler = new FileHandling();
-		try
-		{
-			listClasses = handler.readFile(fileName);
-		}
-		
-		catch (IOException ex)
-		{
-			
-		}
-	}
-	
-	public void loadListDeities(String fileName)
-	{
-		FileHandling handler = new FileHandling();
-		try
-		{
-			listDeities = handler.readFile(fileName);
-		}
-		
-		catch (IOException ex)
-		{
-			
-		}
-	}
 }
