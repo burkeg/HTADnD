@@ -19,14 +19,14 @@ public class Main {
 							// the enemycount.
 
 		elements.loadListElements(elements.getListClasses(), "src/resource/classes.txt");
-		System.out.println(elements.getListClasses().size());
-		for(int i = 0; i < 10; i++)
-		{
-			System.out.println(elements.getListClasses().get(i));
-		}
-
+		elements.loadListElements(elements.getListDeities(), "src/resource/deities.txt");
+		elements.loadListElements(elements.getListRaces(), "src/resource/races.txt");
+		elements.loadListElements(elements.getListGoals(), "src/resource/goals.txt");
+		elements.loadListElements(elements.getListEnchantments(), "src/resource/enchantments.txt");
+		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives.txt");
+		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives.txt");
 		
-/*		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
+		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
 		// determines the amount of enemies for each encounter.
 		// these are "guards" and other name-less
 		bossCount = playerCount / 2 + (randNum(((playerCount / 3) * -1), (playerCount / 3))); 
@@ -45,7 +45,7 @@ public class Main {
 		for(int i = 0; i < enemyCount; i++)
 		{
 			enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
-		}*/
+		}
 }
 
 	static int randNum(int min, int max) {
