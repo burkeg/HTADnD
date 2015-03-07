@@ -7,7 +7,7 @@ public class DnDCharacter {
 	private String chaName = new String();
 	private String chaRace = new String();
 	private String chaClass = new String();
-	private String chaDiety = new String();
+	private String chaDeity = new String();
 	private String chaAlignment = new String();
 	private int chaLevel = 0;
 	
@@ -38,7 +38,7 @@ public class DnDCharacter {
 		chaName = cName;
 		chaRace = cRace;
 		chaClass = cClass;
-		chaDiety = cDeity;
+		chaDeity = cDeity;
 		chaAlignment = cAlign;
 		chaLevel = cLevel;
 	}
@@ -64,7 +64,15 @@ public class DnDCharacter {
 			chaClass = Main.elements.getRandom(Main.elements.getListClasses());
 		}
 		
-		if(chaDeity)
+		if(chaDeity.length() <= 0)
+		{
+			chaDeity = Main.elements.getRandom(Main.elements.getListDeities());
+		}
+		
+		if(chaAlignment.length() <= 0)
+		{
+			//Add alignment gen here
+		}
 	}
 	
 	// the get and set for Character NAME
@@ -98,14 +106,14 @@ public class DnDCharacter {
 		chaClass = cClass; 
 	}
 	
-	// the get and set for character DIETY
-	public String getCDiety()
+	// the get and set for character DEITY
+	public String getCDeity()
 	{
-		return chaDiety;
+		return chaDeity;
 	}
-	public void setCDiety(String cDiety)
+	public void setCDiety(String cDeity)
 	{
-		chaDiety = cDiety; 
+		chaDeity = cDeity; 
 	}
 	
 	// the get and set for character ALIGNMENT
