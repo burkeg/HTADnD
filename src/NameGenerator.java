@@ -6,24 +6,9 @@ public class NameGenerator {
 	static String[] vowBlends = { "ai", "au", "aw", "ay", "ea", "ee", "ei", "eu",
 			"ew", "ey", "ie", "oi", "oo", "ou", "ow", "oy" };
 	
-<<<<<<< HEAD
-	public NameGenerator(int letterRangeLower, int letterRangeUpper) {
-		this.letterRangeLower = letterRangeLower;
-		this.letterRangeUpper = letterRangeUpper;
-		System.out.println("hi");
-	}
-	
-	public NameGenerator() {
-		this.letterRangeLower = 3;
-		this.letterRangeUpper = 5;
-	}
-
-	public String getVowel() {
-=======
 	public static String getVowel() {
->>>>>>> origin/master
 
-		int rand = (int) (Math.random() * vowBlends.length);
+	int rand = (int) (Math.random() * vowBlends.length);
 
 		return vowBlends[rand];
 	}
