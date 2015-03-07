@@ -1,8 +1,16 @@
 
-public class DnDMonster {
+public class DnDMonster 
+{
 	private String monsterName;
 	private String monsterSpecies;
 	private int monsterLevel;
+	
+	public DnDMonster(String monName, String monSpecies, int monLevel)
+	{
+		monsterName = monName;
+		monsterSpecies = monSpecies;
+		monsterLevel = monLevel;
+	}
 	
 	public String getMonsterName()
 	{
