@@ -12,19 +12,26 @@ public class Main {
 		int playerCount = 0; //this is the count of players
 	    int enemyCount = 0; // this is the count of enemies that should be made for the adventure. these are guards and other nameless characters. 
 	    int bossCount = 0; // this is the count of enemies that are actually named. the count of these are NOT considered in the enemycount.
+	    NameGenerator gen = new NameGenerator();
+	    RandomElements elements = new RandomElements();
 		
-		enemyCount = playerCount + 1 + (randNum(((playerCount/2)*-1), (playerCount/2))); //determines the amount of enemies for each encounter. 
-		//these are "guards" and other name-less 
+		enemyCount = playerCount *3 + (randNum((playerCount*-1), playerCount)); //determines the amount of enemies for each encounter. 
+		//these are "guards" and other name-less enemies
 		bossCount = playerCount/2 + (randNum(((playerCount/3)*-1), (playerCount/3))); // determines the amount of boss enemies for each encounter
 		
-		List<String> EnemyNames = new ArrayList<String>();
-		List<String> BossNames = new ArrayList<String>();
+		List<String> enemyNames = new ArrayList<String>();
+		List<String> bossNames = new ArrayList<String>();
+		
+		for(int i = 0; i < bossCount; i++)
+		{
+			bossNames.add(gen.makeName());
+		}
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
-			
-			EnemyNames.add(NameGenerator.makeName());
+			enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
 		}
+		
 	}
 		
 		
