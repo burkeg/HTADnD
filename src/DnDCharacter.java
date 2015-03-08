@@ -76,10 +76,32 @@ public class DnDCharacter {
 		
 		if(chaAlignment.length() <= 0)
 		{
-			//Add alignment gen here
+			randomizeAlignment();
 		}
+	}
+	
+	public void randomizeAlignment()
+	{
+		int ethic = Main.randNum(0,2);
+		int moral = Main.randNum(0,2);
+		String tempAlign;
 		
+		if(ethic == 0) {tempAlign = "Chaotic";}
+		else if(ethic == 1) {tempAlign = "Lawful";}
+		else {tempAlign = "Neutral";}
 		
+		tempAlign += "/";
+		
+		if(moral == 0) {tempAlign += "Evil";}
+		else if(moral == 1) {tempAlign += "Good";}
+		else {tempAlign += "Neutral";}
+		
+		chaAlignment = tempAlign;
+	}
+	
+	public void randomizeEnemyClass()
+	{
+		chaClass = Main.elements.getRandom(Main.elements.getListEnemyClasses());
 	}
 	
 	// the get and set for Character NAME
