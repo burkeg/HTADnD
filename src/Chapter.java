@@ -133,6 +133,9 @@ public class Chapter
 								+ ", all of which are shamefully out of arrows. they begin to flee!"));
 					break;
 					case 1:
+						/*
+						 * [10:31:26 PM] Tri of Mana: Surely you've heard of the mad assassin? Kept in the chambers of the castle? Set high above the kingdom, held aloft in the recesses of the mightiest towers, where the royalty uses them? They sate the assassin's needs, feed him, clothe him, and prepare him?"
+						 */
 					break;
 				}
 		case 9: //This is the case for the EXPLORE Mission
