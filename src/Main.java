@@ -51,7 +51,7 @@ public class Main {
 		}
 		
 		MapGenerator map = new MapGenerator(50, 60);
-		map.boxRandom(0, 0, 15, 20); //x, y, boxWidth, boxHeight
+		map.makeBiome(0, 0, 50, 60, 6); //x, y, boxWidth, boxHeight
 		map.printMap();
 }
 
