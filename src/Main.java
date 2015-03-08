@@ -10,14 +10,6 @@ public class Main {
 	// Global variable holding the Random Elements
 
 	public static void main(String[] args) {
-		int playerCount = 0; // this is the count of players
-		int enemyCount = 0; // this is the count of enemies that should be made
-							// for the adventure. these are guards and other
-							// nameless characters.
-		int bossCount = 0; // this is the count of enemies that are actually
-							// named. the count of these are NOT considered in
-							// the enemycount.
-		int chapterCount = 1; //this is the count of chapters that is desired from the generator.
 
 		elements.loadListElements(elements.getListClasses(), "src/resource/classes.txt");
 		elements.loadListElements(elements.getListDeities(), "src/resource/deities.txt");
@@ -27,28 +19,6 @@ public class Main {
 		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
 		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
-		
-		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
-		// determines the amount of enemies for each encounter.
-		// these are "guards" and other name-less
-		bossCount = playerCount / 2 + (randNum(((playerCount / 3) * -1), (playerCount / 3))); 
-		// determines the amount of boss enemies for each encounter
-
-	    List<DnDCharacter> enemies = new ArrayList<DnDCharacter>();
-		List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
-		
-		for(int i = 0; i < bossCount; i++)
-		{
-			DnDCharacter temp = new DnDCharacter(NameGenerator.makeName());
-			temp.randomizeCharacter();
-			bosses.add(temp);
-		}
-		
-		for(int i = 0; i < enemyCount; i++)
-		{
-			//DnDCharacter temp = new DnDCharacter();
-			//enemies.add(temp);
-		}
 		
 		MapGenerator map = new MapGenerator(50, 60);
 		map.makeBiome(0, 0, 50, 60, 6); //x, y, boxWidth, boxHeight
