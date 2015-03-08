@@ -30,9 +30,10 @@ public class Chapter
 		case 0:  //This is the case for an ASSASSINATION Mission
 				switch(chaptStoryID)
 				{
-					case 0: "You stole away inside, and found your assassination target waiting in slumber. your kill is"
+					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
 						+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
-						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face."
+						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
+					Flavor.add("Stab: you stab th)
 						
 					break;
 					case 1:
@@ -96,7 +97,7 @@ public class Chapter
 					break;
 				}
 		case 7: //This is the case for the MASSACRE Mission
-			Flavor.add("ADVENTURE: MASSACRE")
+			Flavor.add("ADVENTURE: MASSACRE");
 				switch(chaptStoryID)
 				{
 					case 0: 
@@ -105,7 +106,7 @@ public class Chapter
 					break;
 				}
 		case 8: // This is the case for the ESCAPE Mission 
-			Flavor.add("ADVENTURE: EXCAPE!")
+			Flavor.add("ADVENTURE: EXCAPE!");
 			switch(chaptStoryID)
 				{
 					case 0: 
@@ -135,7 +136,7 @@ public class Chapter
 					break;
 				}
 		case 9: //This is the case for the EXPLORE Mission
-			Flavor.add("ADVENTURE: EXPLORE!")
+			Flavor.add("ADVENTURE: EXPLORE!");
 				switch(chaptStoryID)
 				{
 					case 0: 
@@ -156,13 +157,8 @@ public class Chapter
 								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "
 								+ "You turn back, bruised from the hard ground and ceiling pressing against you.");
 					break;
-<<<<<<< HEAD
-					case 1:	
-=======
 					case 1:
-						Flavor.add(" your foot slips into a trap on the ");
->>>>>>> origin/master
-					break;
+						
 				}
 		}
 	}
