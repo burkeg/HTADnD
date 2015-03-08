@@ -129,7 +129,7 @@ public class Chapter
 								+ "You turn back, bruised from the hard ground and ceiling pressing against you.");
 					break;
 					case 1:
-						Flavor.add(" your foot slips into a trap on the "
+						Flavor.add(" your foot slips into a trap on the ");
 					break;
 				}
 		}

@@ -65,10 +65,17 @@ public class MapGenerator {
 
 	public void makeBiome(int blobs) {
 		boolean[][] trueBiomes = new boolean[5][5];
+		int ranX;
+		int ranY;
 		while(blobs > 0) {
-			if (randNum(0, 4) > 0)//
-				
+			ranX = randNum(0,4);
+			ranY = randNum(0,4);
+			if (!trueBiomes[ranX][ranY]) {
+				trueBiomes[ranX][ranY] = true;
+				blobs--;
+			}
 		}
+		
 	}
 	
 	int randNum(int min, int max) {
