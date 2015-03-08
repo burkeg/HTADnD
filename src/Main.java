@@ -21,7 +21,7 @@ public class Main {
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
 		MapGenerator map = new MapGenerator(460, 470);
-		map.makeBiome(0, 0, 460, 470, 2300); //x, y, boxWidth, boxHeight, blotches
+		map.makeBiome(0, 0, 460, 470, 4500); //x, y, boxWidth, boxHeight, blotches
 		map.printMap();
 		
 		MapDraw drawnMap = new MapDraw(460, 470, map);
