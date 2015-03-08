@@ -24,8 +24,8 @@ public class Main {
 		elements.loadListElements(elements.getListRaces(), "src/resource/races.txt");
 		elements.loadListElements(elements.getListGoals(), "src/resource/goals.txt");
 		elements.loadListElements(elements.getListEnchantments(), "src/resource/enchantments.txt");
-		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives.txt");
-		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives.txt");
+		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
+		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
 		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
@@ -33,7 +33,6 @@ public class Main {
 		// these are "guards" and other name-less
 		bossCount = playerCount / 2 + (randNum(((playerCount / 3) * -1), (playerCount / 3))); 
 		// determines the amount of boss enemies for each encounter
-	    RandomElements elements = new RandomElements();
 
 	    List<DnDCharacter> mEnemies = new ArrayList<DnDCharacter>();
 		List<DnDCharacter> mBosses = new ArrayList<DnDCharacter>();
@@ -48,6 +47,7 @@ public class Main {
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
+<<<<<<< HEAD
 			DnDCharacter temp = new DnDCharacter();
 			mEnemies.add(temp);
 		}
@@ -60,6 +60,13 @@ public class Main {
 		
 		
 		MapGenerator map = new MapGenerator(20, 15);
+=======
+			//DnDCharacter temp = new DnDCharacter();
+			//enemies.add(temp);
+		}
+		
+		MapGenerator map = new MapGenerator(50, 60);
+>>>>>>> 86a638f6e1920a160e606f994146e56dcbc586c2
 		map.printMap();
 		map.makeCircle(10, 6, 5);
 		System.out.printf("\n\n\n");
