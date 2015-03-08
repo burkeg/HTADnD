@@ -17,10 +17,25 @@ public class RandomElements {
 	public List<String> listMonsters = new ArrayList<String>(); //List of monsters
 	public List<String> listObjects = new ArrayList<String>(); //List of objects
 	public String[] chapterSubjects = {"Assassination Mission", "Steal Item", "Defend Place",
-			"Defend People", "Convince NPC", "Slay Monsters (Massacre)",
-			"Slay Monsters (Boss)", "Massacre Innocents", "Escape",
+			"Defend People", "Convince NPC", "Slay Monster",
+			"Slay Monster (Boss)", "Slay Humans", "Escape",
 			"Find an Item", "Explore a Place"};
 		
+	public RandomElements ()
+	{
+		//Load to initialize all List<Strings>
+		loadListElements(getListRaces(), "src/resource/races.txt");
+		loadListElements(getListClasses(), "src/resource/classes.txt");
+		loadListElements(getListEnemyClasses(), "src/resource/enemyclasses.txt");
+		loadListElements(getListDeities(), "src/resource/deity.txt");
+		loadListElements(getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
+		loadListElements(getListAdjectivesObject(), "src/resource/adjectives-objects.txt");	
+		loadListElements(getListGoals(), "src/resource/goals.txt");
+		loadListElements(getListEnchantments(), "src/resource/enchantments.txt");
+		loadListElements(getListMonsters(), "src/resource/Monsters.txt");
+		loadListElements(getListObjects(), "src/resource/objects.txt");
+	}
+	
 	//Load the list elements for the selected list. 
 	//Separate from FileHandling.readFile for extensibility.
 	public void loadListElements(List<String> listElements, String fileName)

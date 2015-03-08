@@ -20,8 +20,8 @@ public class Chapter
 
 	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies, List<DnDMonster> monsters)
 	{
-		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
-		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
+		chaptAdvID = Main.randNum(0, 9); // a random decision of the adventure type
+		chaptStoryID = Main.  randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
 		npcMonsters = monsters;
@@ -32,6 +32,7 @@ public class Chapter
 		{
 		
 		case 0:  //This is the case for an ASSASSINATION Mission
+			Flavor.add("CHAPTER: ASSASSINATE!");
 				if(chaptStoryID == 0)
 				{
 					Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
@@ -64,6 +65,7 @@ public class Chapter
 					}
 					break;		
 		case 1: //This is the case for a STEAL ITEM Mission
+			Flavor.add("CHAPTER: STEAL!");
 			 Flavor.add(Main.elements.replaceWithRandom("a large convoy marches along the street, and between the armored "
 					+ npcEnemies.get(enemyId).getCName()
 					+ " you see a large chariot being pulled by "
@@ -81,13 +83,15 @@ public class Chapter
 			break;
 		
 		case 2: //This is the case for the DEFEND PLACE Mission
+			Flavor.add("CHAPTER: DEFEND!");
 				    Flavor.add("You are informed by the Captain of the Guard that the city is in need of soldiers, and mercenaries will be well compensated.");
-					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are payed respectfully.");
+					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are paid respectfully.");
 					Flavor.add("get hurt: you were not skilled enough to be a mercenary, and you accidentally shoot an arrow into your foot. you hurt yourself"
 							+ "and your dignity.");
 				break;
 				
 		case 3: //This is the case for the DEFEND PEOPLE Mission.
+			Flavor.add("CHAPTER: SAVE!");
 					String oldManName = NameGenerator.makeName();
 					Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
 							+ oldManName
@@ -115,6 +119,7 @@ public class Chapter
 					break;
 
 		case 4: //This is the case for the CONVINCE NPC Mission
+			Flavor.add("CHAPTER: PATRONAGE!");
 			switch (chaptStoryID)
 			{
 			case 0:
@@ -136,76 +141,67 @@ public class Chapter
 					break;
 			}
 
-		case 5: //This is the case for the SLAY MONSTERS (MASSACRE) Mission
-				switch(chaptStoryID)
-				{
-					case 0: 
-					break;
-					case 1:
-					break;
-
-				}
+		case 5: //This is the case for the SLAY MONSTER Mission
+			Flavor.add("CHAPTER: SLAY MONSTER!");
+			Flavor.add("You come across a lone beast, raving mad and completely %ABJPERSON. it charges at you but you raise your shield just in time!");
+			
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
-				switch(chaptStoryID)
-				{
-					case 0: Flavor.add(Main.elements.replaceWithRandom("Stolen away beyond the spires of oblivion, at the edge of mercurial, worldly sanity, "
+			Flavor.add("CHAPTER: SLAY BOSS!");
+					Flavor.add(Main.elements.replaceWithRandom("Stolen away beyond the spires of oblivion, at the edge of mercurial, worldly sanity, "
 							+ "you find the forbidden grips of an undead tomb. Within them, kept by surly, cold airs, is the %MONSTER. "
 							+ "His soul kept secure by %DEITY, he remains ever-%ADJPERSON, and continually "
 							+ "%ADJPERSON. His dark, ominous staff is "
-							+ "%ADJOBJECT, iconoclastic and illicit. When you hear his voice, you brace for the %ADJOBJECT happenings that follow its wake. you raise your sheilds against his %ADJOBJECT breath,"
+							+ "%ADJOBJECT, iconoclastic and illicit. When you hear his voice, you brace for the %ADJOBJECT happenings that follow its wake. you raise your shields against his %ADJOBJECT breath,"
 							+ "and prepare for a fight."));
 					break;
-					case 1: 
-					break;
-				}
-		case 7: //This is the case for the MASSACRE Mission
-			Flavor.add("ADVENTURE: MASSACRE");
-				switch(chaptStoryID)
-				{
-					case 0: Flavor.add("The small remote village of "
+
+				
+		case 7: //This is the case for the SLAY HUMANS Mission);
+			Flavor.add("CHAPTER: SLAY HUMANS!");
+			Flavor.add("The small remote village of "
 							+ NameGenerator.makeName()
 							+" has denounced the old gods in exchange for the God of Light. the punishment is death. slay them all.");
 					break;
-				}
+				
 		case 8: // This is the case for the ESCAPE Mission 
-			Flavor.add("ADVENTURE: EXCAPE!");
+			Flavor.add("CHAPTER: EXCAPE!");
 						Flavor.add(Main.elements.replaceWithRandom("one of the adventurers stumble as their ankle entwines with a wire just a few inches off the floor. "
 								+ "suddenly, the air is filled with a thick %ADJOBJECT smoke. You can't help but cough and your eyes burn uncontrollably. then, you hear a hiss. Arrows fly through"
 								+ "the air around you. you have to get out of here!"));
 						Flavor.add(Main.elements.replaceWithRandom("Fight: You jump out of the smoke and find yourselves surrounded by " + npcEnemies.size()
 								+ " %ADJPERSON "
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", Lead by the %ADJPERSON Commander "
-								+ npcBosses.get(randNum(0, (npcBosses.size() - 1))).getCName()
+								+ npcBosses.get(Main.randNum(0, (npcBosses.size() - 1))).getCName()
 								+ ". Prepare to fight!"
 								));
 						Flavor.add(Main.elements.replaceWithRandom("Flee: you attempt to run when one of your players takes an arrow to the knee."
 								+ "They fall, shouting for help. A %ADJPERSON"
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ "storms in, flailing a %ADJOBJECT."
 								+ " the gas continues to hurt your lungs and sear your eyes."));
-						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you sheild yourselves from the arrows by diving onto the ground,"
+						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you shield yourselves from the arrows by diving onto the ground,"
 								+ " and the gas wafts above you. Soon, the air clears and the arrows stop. you find yourself up against "
 								+ (npcEnemies.size() / 2)
 								+ " %RACE "
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", all of which are shamefully out of arrows. they begin to flee!"));
 					break;
 
 				
 		case 9: //This is the case for the EXPLORE Mission
-			Flavor.add("ADVENTURE: EXPLORE!");
+			Flavor.add("CHAPTER: EXPLORE!");
 						Flavor.add( "you're strolling, taking your time, when the ground suddenly gives out below you. You've fallen to a subterranian wonderland."
 							+ "the walls flash in the surfaces light, slightly damp and oddly beautiful. there are "
 							+ "3 tunnels leading out of the room you are in.");
 						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " 
 							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson()) 
 							+ " "
-							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+							+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 							+ " from years past. he has clearly lost his mind, but not his weapon. he jumps in to attack!");
 						Flavor.add( "Tunnel 2: the long and winding tunnel opens to a wide cavern, with an underground river flowing hard over your path."
 							+ "You turn to see a group of cave-dwelling "
-							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+							+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 							+ ", who have abandoned their wits long ago. they have not yet spotted you.");
 						Flavor.add("Tunnel 3: The long tunnel is straight as an arrow, but it's ceiling dips and rises and you continue along. you soon find yourself"
 								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "
@@ -218,11 +214,5 @@ public class Chapter
 		return Flavor;
 	}
 	
-	public int randNum(int min, int max)
-	{
-		Random rand = new Random();
-		int randomInt = rand.nextInt((max - min) +1) + min;
-		return randomInt;
-	}
 	
 }

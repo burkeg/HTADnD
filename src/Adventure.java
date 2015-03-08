@@ -75,7 +75,7 @@ public class Adventure {
 	{
 		String output = "Players: " + playerCount + " | " + 
 			"Average Level: " + avgLevel + " | " +
-			"Chapters: " + chapters;
+			"Chapters: " + chapters.size();
 		return output;
 	}
 	
@@ -130,7 +130,6 @@ public class Adventure {
 					" " + enemies.get(i).getCClass();
 			enemyInfo[i] = tempStr;
 		}
-		
 		return enemyInfo;
 	}
 	

@@ -24,8 +24,16 @@ public class Main {
 
 	static int randNum(int min, int max) {
 		Random rand = new Random();
-		int randomInt = rand.nextInt((max - min) + 1) + min;
-		if(randomInt < 0) { randomInt = 0; } //Make sure we're not returning a negative integer (we use this for indices a lot)
+		if (min > max)
+		{
+			min = 0;
+			max = 0;
+		}
+		int top = max - min + 1;
+		if(top <= 0) { top = 1; } //Make sure we're not returning a negative value of n
+		int randomInt = rand.nextInt(top) + min;
+		
+		
 		return randomInt;
 	}
 }
