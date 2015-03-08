@@ -35,20 +35,27 @@ public class Main {
 		// determines the amount of boss enemies for each encounter
 	    RandomElements elements = new RandomElements();
 
-	    List<DnDCharacter> enemies = new ArrayList<DnDCharacter>();
-		List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
+	    List<DnDCharacter> mEnemies = new ArrayList<DnDCharacter>();
+		List<DnDCharacter> mBosses = new ArrayList<DnDCharacter>();
+		List<Chapter> mChapters = new ArrayList<Chapter>();
 		
 		for(int i = 0; i < bossCount; i++)
 		{
 			DnDCharacter temp = new DnDCharacter(NameGenerator.makeName());
 			temp.randomizeCharacter();
-			bosses.add(temp);
+			mBosses.add(temp);
 		}
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
 			DnDCharacter temp = new DnDCharacter();
-			enemies.add(temp);
+			mEnemies.add(temp);
+		}
+		
+		for(int i = 0; i < chapterCount; i++)
+		{
+			Chapter temp = new Chapter(playerCount, mEnemies, mBosses);
+			mChapters.add(temp);
 		}
 }
 
