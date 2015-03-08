@@ -23,19 +23,20 @@ public class Chapter
 		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
-		
+		int bossId = Main.randNum(0, (npcBosses.size() - 1));
+		int enemyId = Main.randNum(0, (npcEnemies.size() -1));
 		
 		switch (chaptAdvID)
 		{
+		
 		case 0:  //This is the case for an ASSASSINATION Mission
 				switch(chaptStoryID)
 				{
 					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
-						+ npcBosses.get(4).getCName()
+						+ npcBosses.get(bossId).getCName()
 						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
-					Flavor.add("Stab: you stab "
-							+ npcBosses.get(4).getCName()
-							+ ", and they scream bloody murder. the wound is surely fatal, but you hear the rumble of footsteps, and "
+					Flavor.add("Stab: you stab them, "
+							+ "and they scream bloody murder. the wound is surely fatal, but you hear the rumble of footsteps, and "
 							+ (playerCount*2)
 							+ "are quickly on you!");
 					Flavor.add(Main.elements.replaceWithRandom("Poison: you slip a couple of the %ADJOBJECT Poison Between their lips. The target does not wake, "
@@ -66,18 +67,18 @@ public class Chapter
 				switch(chaptStoryID)
 				{
 					case 0: Flavor.add(Main.elements.replaceWithRandom("a large convoy marches along the street, and between the armored "
-							+ npcEnemies.get(2).getCName()
+							+ npcEnemies.get(enemyId).getCName()
 							+ " you see a large chariot being pulled by "
-							+ npcEnemies.get(2).getCRace()
+							+ npcEnemies.get(enemyId).getCRace()
 							+ " servants. The woman inside the chariot waves to the masses dantily with one hand, and her %ADJOBJECT crown catches the sun's light,"
 							+ " as well as your eye."));
 					Flavor.add(Main.elements.replaceWithRandom("Steal the crown: You slip through the crowd and jump past the "
-							+ npcEnemies.get(2).getCName()
+							+ npcEnemies.get(enemyId).getCName()
 							+ "s and "
-							+ npcEnemies.get(2).getCRace()
+							+ npcEnemies.get(enemyId).getCRace()
 							+ ", grabbing the crown and winking at the woman as you dart away."));
 					Flavor.add(Main.elements.replaceWithRandom("steal the crown and fail: you jump through the crowd, but the "
-							+ npcEnemies.get(2).getCName()
+							+ npcEnemies.get(enemyId).getCName()
 							+ "catch you and encircle you. there are three of them but only one of you!"));
 					break;
 					case 1: 
@@ -106,7 +107,7 @@ public class Chapter
 							+ oldManName
 							+ " and pleads with you, 'We've heard of you, your kind. We know what you're capable of. We need you. "
 							+ "A ravenous army of "
-							+ npcEnemies.get(1).getCClass()
+							+ npcEnemies.get(enemyId).getCClass()
 							+ " are on their way. At the helm of the horde is a %OBJECT laced with "
 							+ "%ENCHANTMENT-magic. If you save our village, protect us, then it's yours. "
 							+ "We'll aid you as we can, but if you falter, come the end of the week, there will be nothing that remains."));
@@ -114,13 +115,13 @@ public class Chapter
 					Flavor.add(Main.elements.replaceWithRandom("Lead the Vanguard: You charge fearlessly into battle. you find yourselves in close combat with + "
 							+ (playerCount +2) 
 							+ " "
-							+ npcEnemies.get(1).getCRace()
+							+ npcEnemies.get(enemyId).getCRace()
 							+ " "
-							+ npcEnemies.get(1).getCClass()
+							+ npcEnemies.get(enemyId).getCClass()
 							+ "s. fight for your honor!"));
 					Flavor.add(Main.elements.replaceWithRandom("Arm the encampment's defenses: relying more on a defensive approach, you unleash arrow after"
 							+ " arrow on the invading "
-							+ npcEnemies.get(1).getCRace()
+							+ npcEnemies.get(enemyId).getCRace()
 							+ ", but the waves do not yield. the encampment is held, but most of the men who stayed , including "
 							+ oldManName
 							+ ". you take the magic items and leave."));
@@ -146,7 +147,7 @@ public class Chapter
 					Flavor.add("Ask him for his blessing: he laughs, being a godless man, and gives you a few pieces of silver instead.");
 					Flavor.add("ask him for his gold: the Merchant spits at your shoes and tells you to leave him alone.");
 					Flavor.add("Threaten him: Suddenly, two "
-							+ npcEnemies.get(3).getCName()
+							+ npcEnemies.get(enemyId).getCName()
 							+ "are upon you. they take you to an alley and toss you in a dumpster as the Merchant walks away unharmed.");
 					break;
 
@@ -187,21 +188,21 @@ public class Chapter
 								+ "the air around you. you have to get out of here!"));
 						Flavor.add(Main.elements.replaceWithRandom("Fight: You jump out of the smoke and find yourselves surrounded by " + npcEnemies.size()
 								+ " %ADJPERSON "
-								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", Lead by the %ADJPERSON Commander "
-								+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
+								+ npcBosses.get(randNum(0, (npcBosses.size() - 1))).getCName()
 								+ ". Prepare to fight!"
 								));
 						Flavor.add(Main.elements.replaceWithRandom("Flee: you attempt to run when one of your players takes an arrow to the knee."
-								+ "S/He falls, shouting for help. a %ADJPERSON"
-								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ "They fall, shouting for help. A %ADJPERSON"
+								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
 								+ "storms in, flailing a %ADJOBJECT."
 								+ " the gas continues to hurt your lungs and sear your eyes."));
 						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you sheild yourselves from the arrows by diving onto the ground,"
 								+ " and the gas wafts above you. Soon, the air clears and the arrows stop. you find yourself up against "
 								+ (npcEnemies.size() / 2)
 								+ " %RACE "
-								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", all of which are shamefully out of arrows. they begin to flee!"));
 					break;
 					case 1:
@@ -222,11 +223,11 @@ public class Chapter
 						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " 
 							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson()) 
 							+ " "
-							+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
 							+ " from years past. he has clearly lost his mind, but not his weapon. he jumps in to attack!");
 						Flavor.add( "Tunnel 2: the long and winding tunnel opens to a wide cavern, with an underground river flowing hard over your path."
 							+ "You turn to see a group of cave-dwelling "
-							+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
 							+ ", who have abandoned their wits long ago. they have not yet spotted you.");
 						Flavor.add("Tunnel 3: The long tunnel is straight as an arrow, but it's ceiling dips and rises and you continue along. you soon find yourself"
 								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "

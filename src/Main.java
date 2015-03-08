@@ -11,15 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		elements.loadListElements(elements.getListClasses(), "src/resource/classes.txt");
-		elements.loadListElements(elements.getListDeities(), "src/resource/deities.txt");
-		elements.loadListElements(elements.getListRaces(), "src/resource/races.txt");
-		elements.loadListElements(elements.getListGoals(), "src/resource/goals.txt");
-		elements.loadListElements(elements.getListEnchantments(), "src/resource/enchantments.txt");
-		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
-		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
-		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
-		elements.loadListElements(elements.getListMonsters(), "src/resource/Monsters.txt");
+
 		
 		int width = 459;
 		int height = 475;

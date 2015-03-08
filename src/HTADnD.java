@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Canvas;
 
 
+
 public class HTADnD 
 {
 
@@ -32,6 +33,16 @@ public class HTADnD
 	{
 		try 
 		{
+			Main.elements.loadListElements(Main.elements.getListClasses(), "src/resource/classes.txt");
+			Main.elements.loadListElements(Main.elements.getListDeities(), "src/resource/deity.txt");
+			Main.elements.loadListElements(Main.elements.getListRaces(), "src/resource/races.txt");
+			Main.elements.loadListElements(Main.elements.getListGoals(), "src/resource/goals.txt");
+			Main.elements.loadListElements(Main.elements.getListEnchantments(), "src/resource/enchantments.txt");
+			Main.elements.loadListElements(Main.elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
+			Main.elements.loadListElements(Main.elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
+			Main.elements.loadListElements(Main.elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
+			Main.elements.loadListElements(Main.elements.getListMonsters(), "src/resource/monsters.txt");
+			
 			HTADnD window = new HTADnD();
 			window.open();
 		} 

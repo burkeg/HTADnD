@@ -28,7 +28,8 @@ public class RandomElements {
 		try
 		{
 			listElements.clear(); //Clear listElements' contents
-			listElements.addAll(FileHandling.readFile(fileName)); //Add the contents of the file
+			List<String> ls = FileHandling.readFile(fileName);
+			listElements.addAll(ls); //Add the contents of the file
 		}
 		
 		catch (IOException ex)
@@ -42,7 +43,7 @@ public class RandomElements {
 	//String str = Main.element.getRandom(Main.element.getListRaces());
 	public String getRandom(List<String> getList)
 	{
-		int index = Main.randNum(0,getList.size());
+		int index = Main.randNum(0,(getList.size() - 1));
 		return getList.get(index);
 	}
 	

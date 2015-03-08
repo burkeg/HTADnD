@@ -339,13 +339,12 @@ Vampire
 Vampire Spawn
 Vargouille
 Wight
-Will-O’-Wisp
+Will-O-Wisp
 Winter Wolf
 Worg
 Wraith
 Dread Wraith
 Wyvern
-Monsters (X)
 Xill
 Xorn
 Yeth Hound
