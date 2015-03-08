@@ -57,25 +57,19 @@ public class MapGenerator {
 		while (count > 0) {
 			int originX = randNum(x, x + boxWidth);
 			int originY = randNum(y, y + boxHeight);
-			makeCircle(originX, originY, randNum(3, 15), 0.75);
+			makeCircle(originX, originY, randNum(3, 10), 0.75);
 			count--;
 		}
 
 	}
 
-	public void makeBiome(int blobs) {
-		boolean[][] trueBiomes = new boolean[5][5];
-		int ranX;
-		int ranY;
-		while(blobs > 0) {
-			ranX = randNum(0,4);
-			ranY = randNum(0,4);
-			if (!trueBiomes[ranX][ranY]) {
-				trueBiomes[ranX][ranY] = true;
-				blobs--;
-			}
+	public void makeBiome(int x, int y, int boxWidth, int boxHeight, int blobs) {
+		while (blobs > 0) {
+			int originX = randNum(x, x + width);
+			int originY = randNum(y, y + boxHeight);
+			boxRandom(originX, originY, (int)(boxWidth / 6.0), (int)(boxHeight / 6.0));
+			blobs--;
 		}
-		
 	}
 	
 	int randNum(int min, int max) {
