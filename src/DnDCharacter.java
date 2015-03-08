@@ -10,9 +10,7 @@ public class DnDCharacter {
 	private String chaDeity = new String();
 	private String chaAlignment = new String();
 	private int chaLevel = 0;
-	
-	// TODO Auto-generated method stub
-	
+		
 	public DnDCharacter()
 	{
 		randomizeCharacter();
