@@ -17,16 +17,9 @@ public class Main {
 		int height = 475;
 		
 		MapArrayGenerator map = new MapArrayGenerator(width, height);
+		//map.generateLargeMap();
 		map.generateMap();
 		
-		int highest = 0;
-		for (int j = 0; j < height; j++) {
-			for (int i = 0; i < width; i++) {
-				if (map.getMap()[i][j] > highest)
-					highest = map.getMap()[i][j];
-			}
-		}
-		System.out.println("\n\n" + highest);
 }
 
 	static int randNum(int min, int max) {

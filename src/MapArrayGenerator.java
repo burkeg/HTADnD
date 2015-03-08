@@ -33,16 +33,22 @@ public class MapArrayGenerator {
 		printMap();
 		MapDraw drawnMap = new MapDraw(width, height, this);
 		drawnMap.setColorMap(this.getMap());
+		
+		int count = 5;
+		while (count > 0) {
+		drawnMap.makeSquare(Main.randNum(0, width), Main.randNum(0, height), 10);
+			count--;
+		}
 		drawnMap.saveImage();
 	}
 	
-	public void generateLargeMap() {
+	/*public void generateLargeMap() {
 		makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
 		printMap();
 		MapDraw drawnMap = new MapDraw(width, height, this);
 		drawnMap.setColorMap(scaleUp(this.getMap()));
 		drawnMap.saveImage();
-	}
+	}*/
 	public void makeCircle(int x, int y, int radius, double noise) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
@@ -108,10 +114,11 @@ public class MapArrayGenerator {
 	
 	public int[][] scaleUp(int[][] aray)
 	{
-		int[][] bray = new int[(aray.length*3)][aray[0].length*3];
-		for (int j = 0; j < aray[0].length; j++)
+		int[][] bray = new int[((aray.length-60)*3)][(aray[0].length - 60)*3];
+		for (int j = 60; j < aray[0].length - 60; j++)
 		{
-			for(int i = 0; i < aray.length; i++)
+			System.out.println(aray.length);
+			for(int i = 60; i < aray.length - 60; i++)
 			{
 				setPix(i, j, aray[i][j], bray);
 			}
