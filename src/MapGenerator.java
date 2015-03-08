@@ -26,25 +26,23 @@ public class MapGenerator {
 
 	public void printMap() {
 		for (int j = 0; j < height; j++) {
-			for (int i = 0; i < width; i++) {
-				if (map[i][j] != 0) {
-					System.out.print((char) ('a' + map[i][j] - 1) + " ");
-				} else {
-					System.out.print("  ");
-				}
+			for (int i = 0; i < width; i++) {	
+				  if (map[i][j] != 0) 
+				  { 
+					  System.out.print(map[i][j] + " "); } else { System.out.print("  ");
+				  }
+				 
 			}
 			System.out.println();
 		}
 	}
 
-	public void boxRandom(int x, int y, int width, int height) {
-		int count = randNum(0, 10);
+	public void boxRandom(int x, int y, int boxWidth, int boxHeight) {
+		int count = 9;
 		while (count > 0) {
-			for (int j = y; j < y + height - 1 && j >= 0 && j < height; j++) {
-				for (int i = x; i < x + width - 1 && i >= 0 && i < width; i++) {
-					makeCircle(i, j, randNum(3, 15));
-				}
-			}
+			int originX = randNum(x, x + boxWidth);
+			int originY = randNum(y, y + boxHeight);
+			makeCircle(originX, originY, randNum(3, 15));
 			count--;
 		}
 
