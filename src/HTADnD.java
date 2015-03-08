@@ -30,6 +30,7 @@ public class HTADnD
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	private Display display;
+	private MapArrayGenerator mappy;
 
 	/**
 	 * Launch the application.
@@ -227,8 +228,10 @@ public class HTADnD
 		formToolkit.adapt(lblChapters, true, true);
 		lblChapters.setText("Chapters");
 		
-		Label Enemieslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
-		Enemieslbl.setBounds(10, 156, 120, 15);
+		Label Characterslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
+		Characterslbl.setBounds(10, 156, 120, 15);
+		formToolkit.adapt(Characterslbl, true, true);
+		Characterslbl.setText("Charcters");
 		
 		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
@@ -263,16 +266,24 @@ public class HTADnD
 			@Override
 			public void widgetSelected(SelectionEvent e) 
 			{
+				//try
+				{
+					mappy.generateMap();
+				}
+				//catch(exception exc)
+				{
+					//MessageDialog.openError
+				}
 			}
 		});
 		btnGenerateMap.setBounds(499, 448, 101, 25);
 		formToolkit.adapt(btnGenerateMap, true, true);
 		btnGenerateMap.setText("Generate Map");
 		
-		Label lblBosses = new Label(shlDndGeneratorV, SWT.NONE);
-		lblBosses.setBounds(10, 301, 55, 15);
-		formToolkit.adapt(lblBosses, true, true);
-		lblBosses.setText("Bosses");
+		Label lblMonsters = new Label(shlDndGeneratorV, SWT.NONE);
+		lblMonsters.setBounds(10, 301, 55, 15);
+		formToolkit.adapt(lblMonsters, true, true);
+		lblMonsters.setText("Monsters");
 		
 
 
