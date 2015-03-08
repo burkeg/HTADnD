@@ -108,10 +108,10 @@ public class MapArrayGenerator {
 	
 	public int[][] scaleUp(int[][] aray)
 	{
-		int[][] bray = new int[1197][1245];
-		for (int j = 0; j < 415; j++)
+		int[][] bray = new int[(aray.length*3)][aray[0].length*3];
+		for (int j = 0; j < aray[0].length; j++)
 		{
-			for(int i = 0; i < 399; i++)
+			for(int i = 0; i < aray.length; i++)
 			{
 				setPix(i, j, aray[i][j], bray);
 			}
