@@ -104,4 +104,34 @@ public class Adventure {
 		return Main.elements.replaceWithRandom(output);
 	}
 	
+	public List<String> getBosses()
+	{
+		String tempStr;
+		List<String> bossInfo = new ArrayList<String>();
+		for(int i = 0; i < bosses.size(); i++)
+		{
+			tempStr = bosses.get(i).getCName() +
+					" - " + bosses.get(i).getCRace() + 
+					" " + bosses.get(i).getCClass();
+			bossInfo.add(tempStr);
+		}
+		
+		return bossInfo;
+	}
+	
+	public List<String> getEnemies()
+	{
+		String tempStr;
+		List<String> enemyInfo = new ArrayList<String>();
+		for(int i = 0; i < enemies.size(); i++)
+		{
+			tempStr = enemies.get(i).getCName() +
+					" - " + enemies.get(i).getCRace() + 
+					" " + enemies.get(i).getCClass();
+			enemyInfo.add(tempStr);
+		}
+		
+		return enemyInfo;
+	}
+	
 }
