@@ -206,6 +206,7 @@ public class HTADnD
 				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
 				BossesList.setItems(journey.getBosses());
 				EnemiesList.setItems(journey.getEnemies());
+				ChaptersText.setText(journey.adventureOutput());
 			}
 		});
 		addChapters.setBounds(654, 452, 120, 25);
@@ -299,7 +300,7 @@ public class HTADnD
 		lblBosses.setText("Bosses");
 		lblBosses.setBackground(null);
 		
-		ChaptersText = new Text(shlDndGeneratorV, SWT.BORDER);
+		ChaptersText = new Text(shlDndGeneratorV, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.WRAP);
 		ChaptersText.setBounds(10, 477, 613, 174);
 		formToolkit.adapt(ChaptersText, true, true);
 
