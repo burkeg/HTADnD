@@ -36,6 +36,13 @@ public class MapArrayGenerator {
 		drawnMap.saveImage();
 	}
 	
+	public void generateLargeMap() {
+		makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
+		printMap();
+		MapDraw drawnMap = new MapDraw(width, height, this);
+		drawnMap.setColorMap(scaleUp(this.getMap()));
+		drawnMap.saveImage();
+	}
 	public void makeCircle(int x, int y, int radius, double noise) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
@@ -99,7 +106,7 @@ public class MapArrayGenerator {
 		return randomInt;
 	}
 	
-	/*public int[][] scaleUp(int[][] aray)
+	public int[][] scaleUp(int[][] aray)
 	{
 		int[][] bray = new int[1197][1245];
 		for (int j = 0; j < 415; j++)
@@ -121,5 +128,4 @@ public class MapArrayGenerator {
 		System.arraycopy(row, 0, bray[k+1], l, 3);
 		System.arraycopy(row, 0, bray[k+2], l, 3);
 	}
-*/
 }
