@@ -17,8 +17,8 @@ public class RandomElements {
 	public List<String> listMonsters = new ArrayList<String>(); //List of monsters
 	public List<String> listObjects = new ArrayList<String>(); //List of objects
 	public String[] chapterSubjects = {"Assassination Mission", "Steal Item", "Defend Place",
-			"Defend People", "Convince NPC", "Slay Monsters (Massacre)",
-			"Slay Monsters (Boss)", "Massacre Innocents", "Escape",
+			"Defend People", "Convince NPC", "Slay Monster",
+			"Slay Monster (Boss)", "Slay Humans", "Escape",
 			"Find an Item", "Explore a Place"};
 		
 	//Load the list elements for the selected list. 
