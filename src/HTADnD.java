@@ -227,7 +227,7 @@ public class HTADnD
 		
 		Label Enemieslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
 		Enemieslbl.setBackground(null);
-		Enemieslbl.setBounds(10, 156, 120, 15);
+		Enemieslbl.setBounds(10, 301, 120, 15);
 		
 		MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
@@ -283,7 +283,7 @@ public class HTADnD
 		btnGenerateMap.setText("Generate Map");
 		
 		Label lblBosses = new Label(shlDndGeneratorV, SWT.NONE);
-		lblBosses.setBounds(10, 301, 55, 15);
+		lblBosses.setBounds(10, 156, 55, 15);
 		formToolkit.adapt(lblBosses, true, true);
 		lblBosses.setText("Bosses");
 		lblBosses.setBackground(null);
