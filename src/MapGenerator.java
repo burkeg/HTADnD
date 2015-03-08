@@ -23,6 +23,20 @@ public class MapGenerator {
 			}
 		}
 	}
+	
+	public void makeCircle(int x, int y, int radius, double noise) {
+
+		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
+			for (int i = x - radius; i < x + radius && i >= 0 && i < width; i++) {
+				if (Math.abs(j - y) * Math.abs(j - y) + Math.abs(i - x)
+						* Math.abs(i - x) < radius * radius) {
+					if (Math.random() < noise)
+						map[i][j]++;
+
+				}
+			}
+		}
+	}
 
 	public void printMap() {
 		for (int j = 0; j < height; j++) {
