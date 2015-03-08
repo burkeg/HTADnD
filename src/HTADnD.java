@@ -203,6 +203,11 @@ public class HTADnD
 					MessageDialog.openError(shlDndGeneratorV, "Entry Error", "Invalid number of players (Wrong Type)");
 					return;
 				}
+				
+				//ADVENTURE
+				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
+				BossesList.setItems(journey.getBosses());
+				EnemiesList.setItems(journey.getEnemies());
 			}
 		});
 		addChapters.setBounds(186, 448, 157, 25);
