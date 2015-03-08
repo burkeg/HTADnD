@@ -31,9 +31,15 @@ public class Chapter
 				switch(chaptStoryID)
 				{
 					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
-						+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
+						+ npcBosses.get(4).getCName()
 						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
-					Flavor.add("Stab: you stab th");
+					Flavor.add("Stab: you stab "
+							+ npcBosses.get(4).getCName()
+							+ ", and they scream bloody murder. the wound is surely fatal, but you hear the rumble of footsteps, and "
+							+ (playerCount*2)
+							+ "are quickly on you!");
+					Flavor.add(Main.elements.replaceWithRandom("Poison: you slip a couple of the %ADJOBJECT Poison Between their lips. The target does not wake, "
+							+ "and you slip out just as you came in."));
 						
 					break;
 					case 1: Flavor.add(Main.elements.replaceWithRandom("Surely you've heard of the mad assassin? Kept in the chambers of the castle? "
@@ -50,11 +56,7 @@ public class Chapter
 					Flavor.add(Main.elements.replaceWithRandom("Follow: You follow the mad assassin through the alleys and the bazaar. he stops in an outhouse, "
 							+ "and when he comes out, he is no longer wearing his uniform, and  you learn that the mad assassin is actually a she!! "
 							+ "you follow her, where she returns home to her husband and"
-<<<<<<< HEAD
 							+ " children, and through the window, you watch them make love. why would you follow her? thats creepy stalker, bro."));
-=======
-							+ " children, and through the window, you watch them make love. all of them. why would you follow her? thats creepy stalker, bro."));
->>>>>>> origin/master
 
 					break;
 				}
@@ -63,9 +65,22 @@ public class Chapter
 		case 1: //This is the case for a STEAL ITEM Mission
 				switch(chaptStoryID)
 				{
-					case 0: 
+					case 0: Flavor.add(Main.elements.replaceWithRandom("a large convoy marches along the street, and between the armored "
+							+ npcEnemies.get(2).getCName()
+							+ " you see a large chariot being pulled by "
+							+ npcEnemies.get(2).getCRace()
+							+ " servants. The woman inside the chariot waves to the masses dantily with one hand, and her %ADJOBJECT crown catches the sun's light,"
+							+ " as well as your eye."));
+					Flavor.add(Main.elements.replaceWithRandom("Steal the crown: You slip through the crowd and jump past the "
+							+ npcEnemies.get(2).getCName()
+							+ "s and "
+							+ npcEnemies.get(2).getCRace()
+							+ ", grabbing the crown and winking at the woman as you dart away."));
+					Flavor.add(Main.elements.replaceWithRandom("steal the crown and fail: you jump through the crowd, but the "
+							+ npcEnemies.get(2).getCName()
+							+ "catch you and encircle you. there are three of them but only one of you!"));
 					break;
-					case 1:
+					case 1: 
 					break;
 
 				}
@@ -83,8 +98,10 @@ public class Chapter
 		case 3: //This is the case for the DEFEND PEOPLE Mission
 				switch(chaptStoryID)
 				{
-					case 0: Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
-							+ NameGenerator.makeName()
+					case 0:
+						String oldManName = NameGenerator.makeName();
+						Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
+							+ oldManName
 							+ " and pleads with you, 'We've heard of you, your kind. We know what you're capable of. We need you. "
 							+ "A ravenous army of "
 							+ npcEnemies.get(1).getCClass()
@@ -102,7 +119,9 @@ public class Chapter
 					Flavor.add(Main.elements.replaceWithRandom("Arm the encampment's defenses: relying more on a defensive approach, you unleash arrow after"
 							+ " arrow on the invading "
 							+ npcEnemies.get(1).getCRace()
-							+ ", but the waves do not yield. the encampment is held, but most of the men, including "
+							+ ", but the waves do not yield. the encampment is held, but most of the men who stayed , including "
+							+ oldManName
+							+ ". you take the magic items and leave."));
 							
 					break;
 					case 1:
@@ -112,9 +131,21 @@ public class Chapter
 		case 4: //This is the case for the CONVINCE NPC Mission
 				switch(chaptStoryID) 
 				{
-					case 0: 
+					case 0: Flavor.add(Main.elements.replaceWithRandom("You approach an old cobblestone church, and a %ADJPERSON priest meets you at the door."
+							+ "He insists he wants no trouble and insists you go on your way."));
+					Flavor.add(Main.elements.replaceWithRandom("Persuade for help: He takes pity on you, and offers you some %ADJOBJECT bread and %ADJOBJECT ale."));
+					Flavor.add("Raid the Church: Before you can attempt to get in the door, the priest slams the door and barrs it.");
 					break;
-					case 1:
+					case 1: Flavor.add("among the bazaar, you catch "
+							+ NameGenerator.makeName()
+							+ " "
+							+ NameGenerator.makeName()
+							+", a very wealthy merchant. you consult him, telling him of your goals, but he is not interested in beggers.");
+					Flavor.add("Ask him for his blessing: he laughs, being a godless man, and gives you a few pieces of silver instead.");
+					Flavor.add("ask him for his gold: the Merchant spits at your shoes and tells you to leave him alone.");
+					Flavor.add("Threaten him: Suddenly, two "
+							+ npcEnemies.get(3).getCName()
+							+ "are upon you. they take you to an alley and toss you in a dumpster as the Merchant walks away unharmed.");
 					break;
 
 				}

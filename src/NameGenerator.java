@@ -23,7 +23,10 @@ public class NameGenerator {
 	public static String makeName() {
 		String name = "";
 		boolean startVowel = false;
+		int cacaboo = Main.randNum(0, 50);
 		int rand = (int) (Math.random() * 2 + 3);
+		if (cacaboo == 33)
+			name += "kakakar";
 		for (int i = 0; i < rand; i++) {
 			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
 			if (startVowel) {
