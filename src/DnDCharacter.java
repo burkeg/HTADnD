@@ -96,7 +96,6 @@ public class DnDCharacter {
 		
 		chaAlignment = tempAlign;
 	}
-	
 	public void randomizeEnemyClass()
 	{
 		chaClass = Main.elements.getRandom(Main.elements.getListEnemyClasses());
@@ -173,5 +172,8 @@ public class DnDCharacter {
 		chaLevel += addlevel;
 	}
 	
-	
+	public string serialize();
+	{
+		
+	}
 }

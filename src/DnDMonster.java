@@ -10,7 +10,25 @@ public class DnDMonster
 		monsterLevel = monLevel;
 	}
 	
+	public DnDMonster()
+	{
+		monsterSpecies = monSpecies;
+		monsterLevel = monLevel;
+	}
+	
 
+	public void RandomizeMonster()
+	{
+		if(monsterSpecies.length() <= 0)
+		{
+			monsterSpecies = Main.elements.getRandom(Main.elements.getListMonster()); 
+		}
+		
+		if(monsterLevel.length() <= 0)
+		{
+			monsterLevel = Main.elements.getRandom(Main.elements.getListClasses());
+		}
+	}
 	
 	public String getMonsterSpecies()
 	{

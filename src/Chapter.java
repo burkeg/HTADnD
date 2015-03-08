@@ -16,13 +16,15 @@ public class Chapter
 	private List<String> Flavor = new ArrayList();
 	public List<DnDCharacter> npcBosses = new ArrayList();
 	public List<DnDCharacter> npcEnemies = new ArrayList();
+	public List<DnDMonster> npcMonsters = new ArrayList();
 
-	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies)
+	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies, List<DnDMonster> monsters)
 	{
 		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
 		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
+		npcMonsters = monsters;
 		int bossId = Main.randNum(0, (npcBosses.size() - 1));
 		int enemyId = Main.randNum(0, (npcEnemies.size() -1));
 		
@@ -164,10 +166,14 @@ public class Chapter
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
 				switch(chaptStoryID)
 				{
-					case 0: 
-						//Stolen away beyond the spires of oblivion, at the edge of mercurial, worldly sanity, you would find the forbidden grips of an undead tomb. Within them, kept by surly, cold airs, is the lich. His soul kept secure by %DEITY, he remains ever-%ADJPERSON, and continually %ADJPERSON. His dark, ominous staff is %ADJOBJECT, iconoclastic and illicit. Should you hear his name, be wary. For ill happenings follow its wake.
+					case 0: Flavor.add(Main.elements.replaceWithRandom("Stolen away beyond the spires of oblivion, at the edge of mercurial, worldly sanity, "
+							+ "you find the forbidden grips of an undead tomb. Within them, kept by surly, cold airs, is the %MONSTER. "
+							+ "His soul kept secure by %DEITY, he remains ever-%ADJPERSON, and continually "
+							+ "%ADJPERSON. His dark, ominous staff is "
+							+ "%ADJOBJECT, iconoclastic and illicit. When you hear his voice, you brace for the %ADJOBJECT happenings that follow its wake. you raise your sheilds against his %ADJOBJECT breath,"
+							+ "and prepare for a fight."));
 					break;
-					case 1:
+					case 1: 
 					break;
 				}
 		case 7: //This is the case for the MASSACRE Mission
