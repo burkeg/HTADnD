@@ -69,7 +69,7 @@ public class MapGenerator {
 		while (count > 0) {
 			int originX = randNum(x, x + boxWidth);
 			int originY = randNum(y, y + boxHeight);
-			makeCircle(originX, originY, randNum(3, 10), 0.75);
+			makeCircle(originX, originY, randNum(3, 10), 0.9);
 			count--;
 		}
 

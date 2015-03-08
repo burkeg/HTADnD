@@ -21,12 +21,21 @@ public class Main {
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
 		MapGenerator map = new MapGenerator(300, 400);
-		map.makeBiome(0, 0, 300, 400, 800); //x, y, boxWidth, boxHeight, blotches
+		map.makeBiome(0, 0, 300, 400, 2300); //x, y, boxWidth, boxHeight, blotches
 		map.printMap();
 		
 		MapDraw drawnMap = new MapDraw(300, 400, map);
 		drawnMap.setMap(map.getMap());
 		drawnMap.saveImage();
+		
+		int highest = 0;
+		for (int j = 0; j < 400; j++) {
+			for (int i = 0; i < 300; i++) {
+				if (map.getMap()[i][j] > highest)
+					highest = map.getMap()[i][j];
+			}
+		}
+		System.out.println("\n\n" + highest);
 }
 
 	static int randNum(int min, int max) {

@@ -40,9 +40,9 @@ public class MapDraw {
 	}
 
 	public void setTheRGB(int x, int y, int mapNum) {
-		if (mapNum >= 10)
-			mapNum -= 87;
-		int r = (int) (((double) mapNum / 20.0) * 255); // red component 0...255
+		int r = (int) (((double) mapNum / 30.0) * 255); // red component 0...255
+		if (r > 255)
+			r = 255;
 		int g = r;// green component 0...255
 		int b = r;// blue component 0...255
 		int col = (r << 16) | (g << 8) | b;
