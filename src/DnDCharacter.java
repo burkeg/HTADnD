@@ -13,6 +13,11 @@ public class DnDCharacter {
 	
 	// TODO Auto-generated method stub
 	
+	public DnDCharacter()
+	{
+		randomizeCharacter();
+	}
+	
 	public DnDCharacter(String cName)
 	{
 		chaName = cName;
