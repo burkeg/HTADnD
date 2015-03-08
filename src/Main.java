@@ -57,6 +57,13 @@ public class Main {
 			Chapter temp = new Chapter(playerCount, mEnemies, mBosses);
 			mChapters.add(temp);
 		}
+		
+		
+		MapGenerator map = new MapGenerator(20, 15);
+		map.printMap();
+		map.makeCircle(10, 6, 5);
+		System.out.printf("\n\n\n");
+		map.printMap();
 }
 
 	static int randNum(int min, int max) {
