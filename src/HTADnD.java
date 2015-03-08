@@ -11,7 +11,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.wb.swt.SWTResourceManager;
+//import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.PaintEvent;
@@ -30,6 +30,9 @@ public class HTADnD
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	private Display display;
+	private MapArrayGenerator mappy = new MapArrayGenerator(459, 475);
+	private Image image;
+	private Canvas MapViewer;
 
 	/**
 	 * Launch the application.
@@ -73,8 +76,8 @@ public class HTADnD
 	{
 		//display = new Display();
 		shlDndGeneratorV = new Shell();
-		shlDndGeneratorV.setAlpha(0);
-		shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
+		shlDndGeneratorV.setAlpha(255);
+		//shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
 		shlDndGeneratorV.setSize(782, 516);
 		shlDndGeneratorV.setText("DnD Generator V.6");
 		shlDndGeneratorV.setLayout(null);
@@ -234,9 +237,9 @@ public class HTADnD
 		Enemieslbl.setBackground(null);
 		Enemieslbl.setBounds(10, 156, 120, 15);
 		
-		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
+		MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
-		Image image = new Image(display, "C:/Users/Jackson/Documents/GitHub/HTADnDUI/terrain.png"); 
+		image = new Image(display, "terrain.png"); 
 		MapViewer.setBounds(357, 21, 399, 415);
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
@@ -247,7 +250,7 @@ public class HTADnD
 		Label lblMapalsoAvailible = new Label(shlDndGeneratorV, SWT.NONE);
 		lblMapalsoAvailible.setBounds(360, 0, 332, 15);
 		formToolkit.adapt(lblMapalsoAvailible, true, true);
-		lblMapalsoAvailible.setText("Map: (also availible as a PNG image)");
+		lblMapalsoAvailible.setText("Map: (also available as a PNG image)");
 		lblMapalsoAvailible.setBackground(null);
 		
 		ImageHyperlink imageLink = formToolkit.createImageHyperlink(shlDndGeneratorV, SWT.NONE);
@@ -269,6 +272,18 @@ public class HTADnD
 			@Override
 			public void widgetSelected(SelectionEvent e) 
 			{
+				try 
+				{
+					mappy = new MapArrayGenerator(459, 475);
+					mappy.generateMap();
+					image = new Image(display, "terrain.png");
+					MapViewer.setBackgroundImage(image);
+				}
+				
+				catch (Exception exc)
+				{
+						exc.printStackTrace();				
+				}
 			}
 		});
 		btnGenerateMap.setBounds(499, 448, 101, 25);
