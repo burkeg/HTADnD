@@ -1,25 +1,16 @@
 
 public class DnDMonster 
 {
-	private String monsterName;
 	private String monsterSpecies;
 	private int monsterLevel;
 	
-	public DnDMonster(String monName, String monSpecies, int monLevel)
+	public DnDMonster( String monSpecies, int monLevel)
 	{
-		monsterName = monName;
 		monsterSpecies = monSpecies;
 		monsterLevel = monLevel;
 	}
 	
-	public String getMonsterName()
-	{
-		return monsterName;
-	}
-	public void setMonsterName(String name)
-	{
-		monsterName = name;
-	}
+
 	
 	public String getMonsterSpecies()
 	{

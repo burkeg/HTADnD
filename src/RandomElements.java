@@ -14,6 +14,7 @@ public class RandomElements {
 	public List<String> listAdjectivesObject = new ArrayList<String>(); //List of adjectives that describe a thing
 	public List<String> listGoals = new ArrayList<String>(); //List of goals that a person might have.
 	public List<String> listEnchantments = new ArrayList<String>(); //List of enchantments for weapons/armor/items
+	public List<String> listMonsters = new ArrayList<String>(); //List of monsters
 	public List<String> listObjects = new ArrayList<String>(); //List of objects
 	public String[] chapterSubjects = {"Assassination Mission", "Steal Item", "Defend Place",
 			"Defend People", "Convince NPC", "Slay Monsters (Massacre)",
@@ -111,5 +112,10 @@ public class RandomElements {
 	public List<String> getListEnchantments()
 	{
 		return listEnchantments;
+	}
+	
+	public List<String> getListMonsters()
+	{
+		return listMonsters;
 	}
 }

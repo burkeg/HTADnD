@@ -88,9 +88,11 @@ public class Chapter
 		case 2: //This is the case for the DEFEND PLACE Mission
 				switch(chaptStoryID)
 				{
-					case 0: 
-					break;
-					case 1:
+					case 0: Flavor.add("You are informed by the Captain of the Guard that the city is in need of soldiers, and mercenaries will be well compensated.");
+					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are payed respectfully.");
+					Flavor.add("get hurt: you were not skilled enough to be a mercenary, and you accidentally shoot an arrow into your foot. you hurt yourself"
+							+ "and your dignity.");
+						
 					break;
 
 				}
@@ -170,9 +172,9 @@ public class Chapter
 			Flavor.add("ADVENTURE: MASSACRE");
 				switch(chaptStoryID)
 				{
-					case 0: 
-					break;
-					case 1:
+					case 0: Flavor.add("The small remote village of "
+							+ NameGenerator.makeName()
+							+" has denounced the old gods in exchange for the God of Light. the punishment is death. slay them all.");
 					break;
 				}
 		case 8: // This is the case for the ESCAPE Mission 

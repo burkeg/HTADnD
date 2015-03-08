@@ -1,0 +1,420 @@
+Aboleth
+Aboleth Mage
+Achaierai
+Allip
+Angel
+Angel, Astral Deva
+Angel, Planetar
+Angel, Solar
+Animated Object
+Ankheg
+Aranea
+Archon
+Lantern Archon
+Hound Archon
+Hound Archon Hero
+Trumpet Archon
+Arrowhawk
+Assassin Vine
+Athach
+Avoral
+Azer
+Barghest
+Greater Barghest
+Basilisk
+Abyssal Greater Basilisk
+Behir
+Belker
+Blink Dog
+Bodak
+Bralani
+Bugbear
+Bulette
+Celestial Creature
+Centaur
+Chaos Beast
+Chimera
+Choker
+Chuul
+Cloaker
+Cockatrice
+Couatl
+Darkmantle
+Delver
+Demon
+Babau
+Balor
+Bebilith
+Dretch
+Glabrezu
+Hezrou
+Marilith
+Nalfeshnee
+Quasit
+Retriever
+Succubus
+Vrock
+Derro
+Destrachan
+Devil
+Barbed Devil
+Bearded Devil
+Bone Devil 
+Chain Devil
+Erinyes
+Hellcat
+Horned Devil
+Ice Devil 
+Imp
+Lemure
+Pit Fiend
+Devourer
+Digester
+Dinosaur
+Deinonychus
+Elasmosaurus
+Megaraptor
+Triceratops
+Tyrannosaurus
+Dire Animal
+Dire Ape
+Dire Badger
+Dire Bat
+Dire Bear
+Dire Boar
+Dire Lion
+Dire Rat
+Dire Shark
+Dire Tiger
+Dire Weasel
+Dire Wolf
+Dire Wolverine
+Doppelganger
+Dragon, True
+Chromatic Dragons
+Black Dragon
+Blue Dragon
+Green Dragon
+Red Dragon
+White Dragon
+Metallic Dragons
+Brass Dragon
+Bronze Dragon
+Copper Dragon
+Gold Dragon
+Silver Dragon
+Dragon Turtle
+Dragonne
+Drider
+Dryad
+Dwarf
+Deep Dwarf
+Duergar
+Mountain Dwarf
+Eagle Giant
+Elemental
+Air Elemental
+Earth Elemental
+Fire Elemental
+Water Elemental
+Elf
+Half-Elf
+Aquatic Elf
+Drow
+Gray Elf
+Wild Elf
+Wood Elf
+Ethereal Filcher
+Ethereal Marauder
+Ettercap
+Ettin
+Fiendish Creature
+Formian
+Worker
+Warrior
+Taskmaster
+Myrmarch
+Queen
+Frost Worm
+Fungus
+Shrieker
+Violet Fungus
+Gargoyle
+Kapoacinth
+Genie
+Djinni
+Noble Djinn
+Efreeti
+Janni
+Ghaele
+Ghost
+Ghoul
+Lacedon
+Ghast
+Giant
+Cloud Giant
+Fire Giant
+Frost Giant
+Frost Giant Jarl
+Hill Giant
+Stone Giant
+Stone Giant Elders
+Storm Giant
+Gibbering Mouther
+Girallon
+Gnoll
+Gnome
+Svirfneblin
+Forest Gnome
+Goblin
+Golem
+Clay Golem
+Flesh Golem
+Iron Golem
+Stone Golem
+Greater Stone Golem
+Gorgon
+Gray Render
+Grick
+Griffon
+Grimlock
+Hag
+Annis
+Green Hag
+Sea Hag
+Half-Celestial
+Half-Dragon
+Half-Fiend
+Halfling
+Tallfellow
+Deep Halfling
+Harpy
+Harpy Archer
+Hell Hound
+Nessian Warhound
+Hippogriff
+Hobgoblin
+Homunculus
+Howler
+Hydra
+Pyrohydra
+Cryohydra
+Inevitable
+Kolyarut
+Marut
+Zelekhut
+Invisible Stalker
+Kobold
+Kraken
+Krenshar
+Lamia
+Lammasu
+Golden Protector
+Leonal
+Lich
+Lillend
+Lizardfolk
+Locathah
+Lycanthrope
+Werebear
+Wereboar
+Hill Giant Dire Wereboar
+Wererat
+Weretiger
+Werewolf
+Werewolf Lord
+Magmin
+Manticore
+Medusa
+Mephit
+Air Mephit
+Dust Mephit
+Earth Mephit
+Fire Mephit
+Ice Mephit
+Magma Mephit
+Ooze Mephit
+Salt Mephit
+Steam Mephit
+Water Mephit
+Merfolk
+Mimic
+Minotaur
+Mohrg
+Mummy
+Mummy Lord
+Naga
+Dark Naga
+Guardian Naga
+Spirit Naga
+Water Naga
+Night Hag
+Nightmare
+Cauchemar
+Nightshade
+Nightcrawler
+Nightwalker
+Nightwing
+Nymph
+Ogre
+Ogre Barbarian
+Merrow
+Ogre Mage
+Ooze
+Black Pudding
+Elder Black Pudding
+Gelatinous Cube
+Gray Ooze
+Ochre Jelly
+Orc
+Half-Orcs
+Otyugh
+Owl Giant
+Owlbear
+Pegasus
+Phantom Fungus
+Phase Spider
+Phasm
+Planetouched
+Aasimar
+Tiefling
+Pseudodragon
+Purple Worm
+Rakshasa
+Rast
+Ravid
+Razor Boar
+Remorhaz
+Roc
+Roper
+Rust Monster
+Sahuagin
+Sahuagin Mutants
+Malenti
+Salamander
+Satyr
+Scorpionfolk
+Sea Cat
+Shadow
+Greater Shadow
+Shadow Mastiff
+Shambling Mound
+Shield Guardian
+Shocker Lizard
+Skeleton
+Skum
+Spectre
+Sphinx
+Androsphinx
+Criosphinx
+Gynosphinx
+Hieracosphinx
+Spider Eater
+Sprite
+Grig
+Nixie
+Pixie
+Stirge
+Swarm
+Bat Swarm
+Centipede Swarm
+Hellwasp Swarm
+Locust Swarm
+Rat Swarm
+Spider Swarm
+Tarrasque
+Tendriculos
+Thoqqua
+Titan
+Tojanida
+Treant
+Triton
+Troglodyte
+Troll
+Scrag
+Troll Hunter
+Unicorn
+Celestial Charger
+Vampire
+Vampire Spawn
+Vargouille
+Wight
+Will-O’-Wisp
+Winter Wolf
+Worg
+Wraith
+Dread Wraith
+Wyvern
+Monsters (X)
+Xill
+Xorn
+Yeth Hound
+Yrthak
+Zombie
+Ape
+Baboon
+Badger
+Bat
+Bear, Black
+Bear, Brown
+Bear, Polar
+Bison
+Boar
+Camel
+Cat
+Cheetah
+Crocodile
+Crocodile, Giant
+Dog
+Dog, Riding
+Donkey
+Eagle
+Elephant
+Hawk
+Horse
+Horse, Heavy
+Horse, Light
+Warhorse, Heavy
+Warhorse, Light
+Hyena
+Leopard
+Lion
+Lizard
+Lizard, Monitor
+Manta Ray
+Monkey
+Mule
+Octopus
+Octopus, Giant
+Owl
+Pony
+Pony, War
+Porpoise
+Rat
+Raven
+Rhinoceros
+Shark
+Snake
+Constrictor Snake
+Viper Snake
+Squid
+Squid, Giant
+Tiger
+Toad
+Weasel
+Whale
+Baleen Whale
+Cachalot Whale
+Orca
+Wolf
+Wolverine
+Giant Ant
+Giant Bee
+Giant Bombardier Beetle
+Giant Fire Beetle
+Giant Stag Beetle
+Giant Praying Mantis
+Giant Wasp
+Monstrous Centipede
+Monstrous Scorpion
+Monstrous Spider

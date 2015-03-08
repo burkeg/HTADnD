@@ -19,6 +19,7 @@ public class Main {
 		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
 		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
+		elements.loadListElements(elements.getListMonsters(), "src/resource/Monsters.txt");
 		
 		MapGenerator map = new MapGenerator(300, 400);
 		map.makeBiome(0, 0, 300, 400, 2300); //x, y, boxWidth, boxHeight, blotches
