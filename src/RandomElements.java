@@ -45,6 +45,9 @@ public class RandomElements {
 		return getList.get(index);
 	}
 	
+	//Replace %(NAME) with a random string.
+	//example:
+	//Flavor.Add(Main.element.replaceWithRandom("That %RACE over there - isn't his poetry %ADJOBJECT?"))
 	public String replaceWithRandom(String input)
 	{
 		String output = input;

@@ -112,11 +112,12 @@ public class Chapter
 				switch(chaptStoryID)
 				{
 					case 0: 
+						
 						Flavor.add( "you're strolling, taking your time, when the ground suddenly gives out below you. You've fallen to a subterranian wonderland."
 							+ "the walls flash in the surfaces light, slightly damp and oddly beautiful. there are "
 							+ "3 tunnels leading out of the room you are in.");
 						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " 
-							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson())
+							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson()) 
 							+ " "
 							+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
 							+ " from years past. he has clearly lost his mind, but not his weapon. he jumps in to attack!");
@@ -129,7 +130,7 @@ public class Chapter
 								+ "You turn back, bruised from the hard ground and ceiling pressing against you.");
 					break;
 					case 1:
-						Flavor.add(" your foot slips into a trap on the "
+						Flavor.add(" your foot slips into a trap on the ");
 					break;
 				}
 		}
