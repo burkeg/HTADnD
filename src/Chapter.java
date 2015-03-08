@@ -20,8 +20,8 @@ public class Chapter
 
 	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies, List<DnDMonster> monsters)
 	{
-		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
-		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
+		chaptAdvID = Main.randNum(0, 9); // a random decision of the adventure type
+		chaptStoryID = Main.  randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
 		npcMonsters = monsters;
@@ -119,7 +119,7 @@ public class Chapter
 					break;
 
 		case 4: //This is the case for the CONVINCE NPC Mission
-			Flavor.add("CHAPTER: PATRONAGE!")
+			Flavor.add("CHAPTER: PATRONAGE!");
 			switch (chaptStoryID)
 			{
 			case 0:
@@ -143,10 +143,7 @@ public class Chapter
 
 		case 5: //This is the case for the SLAY MONSTER Mission
 			Flavor.add("CHAPTER: SLAY MONSTER!");
-			int monsid = randNum(0, npcMonsters.size());
-			Flavor.add("You come across a lone " 
-					+ npcMonsters.get(monsid).getMonsterSpecies()
-					+ ", raving mad and completely %ABJPERSON. it charges at you but you raise your sheild just in time!");
+			Flavor.add("You come across a lone beast, raving mad and completely %ABJPERSON. it charges at you but you raise your sheild just in time!");
 			
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
 			Flavor.add("CHAPTER: SLAY BOSS!");
@@ -173,21 +170,21 @@ public class Chapter
 								+ "the air around you. you have to get out of here!"));
 						Flavor.add(Main.elements.replaceWithRandom("Fight: You jump out of the smoke and find yourselves surrounded by " + npcEnemies.size()
 								+ " %ADJPERSON "
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", Lead by the %ADJPERSON Commander "
-								+ npcBosses.get(randNum(0, (npcBosses.size() - 1))).getCName()
+								+ npcBosses.get(Main.randNum(0, (npcBosses.size() - 1))).getCName()
 								+ ". Prepare to fight!"
 								));
 						Flavor.add(Main.elements.replaceWithRandom("Flee: you attempt to run when one of your players takes an arrow to the knee."
 								+ "They fall, shouting for help. A %ADJPERSON"
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ "storms in, flailing a %ADJOBJECT."
 								+ " the gas continues to hurt your lungs and sear your eyes."));
 						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you sheild yourselves from the arrows by diving onto the ground,"
 								+ " and the gas wafts above you. Soon, the air clears and the arrows stop. you find yourself up against "
 								+ (npcEnemies.size() / 2)
 								+ " %RACE "
-								+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ ", all of which are shamefully out of arrows. they begin to flee!"));
 					break;
 
@@ -200,11 +197,11 @@ public class Chapter
 						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " 
 							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson()) 
 							+ " "
-							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+							+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 							+ " from years past. he has clearly lost his mind, but not his weapon. he jumps in to attack!");
 						Flavor.add( "Tunnel 2: the long and winding tunnel opens to a wide cavern, with an underground river flowing hard over your path."
 							+ "You turn to see a group of cave-dwelling "
-							+ npcEnemies.get(randNum(0, (npcEnemies.size() -1))).getCName()
+							+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 							+ ", who have abandoned their wits long ago. they have not yet spotted you.");
 						Flavor.add("Tunnel 3: The long tunnel is straight as an arrow, but it's ceiling dips and rises and you continue along. you soon find yourself"
 								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "
@@ -217,11 +214,5 @@ public class Chapter
 		return Flavor;
 	}
 	
-	public int randNum(int min, int max)
-	{
-		Random rand = new Random();
-		int randomInt = rand.nextInt((max - min) +1) + min;
-		return randomInt;
-	}
 	
 }
