@@ -165,6 +165,7 @@ public class Chapter
 				switch(chaptStoryID)
 				{
 					case 0: 
+						//Stolen away beyond the spires of oblivion, at the edge of mercurial, worldly sanity, you would find the forbidden grips of an undead tomb. Within them, kept by surly, cold airs, is the lich. His soul kept secure by %DEITY, he remains ever-%ADJPERSON, and continually %ADJPERSON. His dark, ominous staff is %ADJOBJECT, iconoclastic and illicit. Should you hear his name, be wary. For ill happenings follow its wake.
 					break;
 					case 1:
 					break;
