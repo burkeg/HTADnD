@@ -51,9 +51,7 @@ public class Main {
 		}
 		
 		MapGenerator map = new MapGenerator(50, 60);
-		map.printMap();
-		map.makeCircle(10, 6, 5);
-		System.out.printf("\n\n\n");
+		map.boxRandom(13, 20, 15, 20);
 		map.printMap();
 }
 
