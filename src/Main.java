@@ -44,7 +44,7 @@ public class Main {
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
-			enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
+			//enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
 		}
 }
 
