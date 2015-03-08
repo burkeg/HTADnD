@@ -17,13 +17,7 @@ public class Main {
 		int height = 475;
 		
 		MapArrayGenerator map = new MapArrayGenerator(width, height);
-		map.makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
-		map.printMap();
-				
-		MapDraw drawnMap = new MapDraw(width, height, map);
-		drawnMap.setColorMap(map.getMap());
-		drawnMap.makeSquare(100, 100, 15);
-		drawnMap.saveImage();
+		map.generateMap();
 		
 		int highest = 0;
 		for (int j = 0; j < height; j++) {
