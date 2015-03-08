@@ -245,20 +245,6 @@ public class HTADnD
 		lblMapalsoAvailible.setText("Map: (also available as a PNG image)");
 		lblMapalsoAvailible.setBackground(null);
 		
-		ImageHyperlink imageLink = formToolkit.createImageHyperlink(shlDndGeneratorV, SWT.NONE);
-		imageLink.addHyperlinkListener(new IHyperlinkListener() {
-			public void linkActivated(HyperlinkEvent arg0) {
-			}
-			public void linkEntered(HyperlinkEvent arg0) {
-			}
-			public void linkExited(HyperlinkEvent arg0) {
-			}
-		});
-		imageLink.setBounds(698, 572, 76, 19);
-		formToolkit.paintBordersFor(imageLink);
-		imageLink.setText("Map");
-		imageLink.setBackground(null);
-		
 		Button btnGenerateMap = new Button(shlDndGeneratorV, SWT.NONE);
 		btnGenerateMap.addSelectionListener(new SelectionAdapter() {
 			@Override
