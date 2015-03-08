@@ -47,4 +47,11 @@ public class DnDMonster
 	{
 		monsterLevel = level;
 	}
+	
+	public String serialize()
+	{
+		String serializedString = new String();
+		serializedString = monsterSpecies + '\t' + monsterLevel;
+		return serializedString;
+	}
 }
