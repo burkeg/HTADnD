@@ -23,7 +23,7 @@ public class MapGenerator {
 			}
 		}
 	}
-	
+
 	public void makeCircle(int x, int y, int radius, double noise) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
@@ -41,12 +41,19 @@ public class MapGenerator {
 	public void printMap() {
 		makeCircle(0, 0, 5);
 		for (int j = 0; j < height; j++) {
-			for (int i = 0; i < width; i++) {	
-				  if (map[i][j] != 0) 
-				  { 
-					  System.out.print(map[i][j] + " "); } else { System.out.print("  ");
-				  }
-				 
+			for (int i = 0; i < width; i++) {
+				if (map[i][j] != 0) {
+					if (map[i][j] == 10)
+						map[i][j] = 'a';
+					if (map[i][j] >= 'a') {
+						System.out.print((char) map[i][j] + " ");
+						continue;
+					}
+					System.out.print(map[i][j] + " ");
+				} else {
+					System.out.print("  ");
+				}
+
 			}
 			System.out.println();
 		}
@@ -63,21 +70,20 @@ public class MapGenerator {
 
 	}
 
-
 	public void makeBiome(int x, int y, int boxWidth, int boxHeight, int blobs) {
 		while (blobs > 0) {
 			int originX = randNum(x, x + width);
 			int originY = randNum(y, y + boxHeight);
-			boxRandom(originX, originY, (int)(boxWidth / 6.0), (int)(boxHeight / 6.0));
+			boxRandom(originX, originY, (int) (boxWidth / 6.0),
+					(int) (boxHeight / 6.0));
 			blobs--;
 		}
 	}
 
-	
 	int randNum(int min, int max) {
 		Random rand = new Random();
 		int randomInt = rand.nextInt((max - min) + 1) + min;
 		return randomInt;
 	}
-	
+
 }
