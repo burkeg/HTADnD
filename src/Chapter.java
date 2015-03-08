@@ -33,7 +33,7 @@ public class Chapter
 					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
 						+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
 						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
-					Flavor.add("Stab: you stab th)
+					Flavor.add("Stab: you stab th")
 						
 					break;
 					case 1: Flavor.add(Main.elements.replaceWithRandom("Surely you've heard of the mad assassin? Kept in the chambers of the castle? "
@@ -79,7 +79,10 @@ public class Chapter
 		case 3: //This is the case for the DEFEND PEOPLE Mission
 				switch(chaptStoryID)
 				{
-					case 0: 
+					case 0:
+						/*
+						 * "We've heard of you, your kind. We know what you're capable of. We need you. A ravenous army of %ENEMYCLASS are on their way. At the helm of the horde is a %OBJECT laced with %ENCHANTMENT-magic. If you save our village, protect us, then it's yours. We'll aid you as we can, but if you falter, come the end of the week, there will be nothing that remains."
+						 */
 					break;
 					case 1:
 					break;
