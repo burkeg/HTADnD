@@ -3,15 +3,22 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.*;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.swt.widgets.Table;
 //import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Canvas;
-
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.ui.forms.widgets.ImageHyperlink;
+import org.eclipse.ui.forms.events.IHyperlinkListener;
+import org.eclipse.ui.forms.events.HyperlinkEvent;
+import org.eclipse.swt.widgets.List;
 
 
 public class HTADnD 
@@ -22,8 +29,7 @@ public class HTADnD
 	private Text avgPlayerLvl;
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
-	private Text enemiesAndBossesOut;
-	private Text chaptOut;
+	private Display display;
 
 	/**
 	 * Launch the application.
@@ -33,17 +39,6 @@ public class HTADnD
 	{
 		try 
 		{
-			Main.elements.loadListElements(Main.elements.getListClasses(), "src/resource/classes.txt");
-			Main.elements.loadListElements(Main.elements.getListDeities(), "src/resource/deity.txt");
-			Main.elements.loadListElements(Main.elements.getListRaces(), "src/resource/races.txt");
-			Main.elements.loadListElements(Main.elements.getListGoals(), "src/resource/goals.txt");
-			Main.elements.loadListElements(Main.elements.getListEnchantments(), "src/resource/enchantments.txt");
-			Main.elements.loadListElements(Main.elements.getListAdjectivesPerson(), "src/resource/adjectives-people.txt");
-			Main.elements.loadListElements(Main.elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
-			Main.elements.loadListElements(Main.elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
-			Main.elements.loadListElements(Main.elements.getListMonsters(), "src/resource/monsters.txt");
-			Main.elements.loadListElements(Main.elements.getListObjects(), "src/resource/objects.txt");
-			
 			HTADnD window = new HTADnD();
 			window.open();
 		} 
@@ -76,6 +71,7 @@ public class HTADnD
 	 */
 	protected void createContents() 
 	{
+		//display = new Display();
 		shlDndGeneratorV = new Shell();
 		shlDndGeneratorV.setSize(782, 516);
 		shlDndGeneratorV.setText("DnD Generator V.6");
@@ -92,6 +88,18 @@ public class HTADnD
 		Label lblChapterCount = new Label(shlDndGeneratorV, SWT.NONE);
 		lblChapterCount.setBounds(10, 104, 120, 15);
 		lblChapterCount.setText("Chapter Count");
+		
+		final List EnemiesList = new List(shlDndGeneratorV, SWT.BORDER);
+		EnemiesList.setBounds(10, 322, 120, 121);
+		formToolkit.adapt(EnemiesList, true, true);
+		
+		final List BossesList = new List(shlDndGeneratorV, SWT.BORDER);
+		BossesList.setBounds(10, 174, 120, 121);
+		formToolkit.adapt(BossesList, true, true);
+		
+		final List ChaptersList = new List(shlDndGeneratorV, SWT.BORDER);
+		ChaptersList.setBounds(136, 128, 207, 314);
+		formToolkit.adapt(ChaptersList, true, true);
 		
 		numPlayer = new Text(shlDndGeneratorV, SWT.BORDER);
 		numPlayer.setBounds(10, 31, 76, 21);
@@ -126,8 +134,7 @@ public class HTADnD
 				}
 				try
 				{
-					enemiesAndBossesOut.selectAll();
-					enemiesAndBossesOut.clearSelection();
+					EnemiesList.removeAll();
 				}
 				catch(Exception exc)
 				{
@@ -136,8 +143,16 @@ public class HTADnD
 				}
 				try
 				{
-					chaptOut.selectAll();
-					chaptOut.clearSelection();
+					BossesList.removeAll();
+				}
+				catch(Exception exc)
+				{
+					exc.printStackTrace();
+					return;
+				}
+				try
+				{
+					ChaptersList.removeAll();
 				}
 				catch(Exception exc)
 				{
@@ -146,7 +161,7 @@ public class HTADnD
 				}
 			}
 		});
-		clearBtn.setBounds(349, 442, 75, 25);
+		clearBtn.setBounds(351, 448, 75, 25);
 		clearBtn.setToolTipText("Clear ALL");
 		clearBtn.setText("Clear");
 		
@@ -183,12 +198,9 @@ public class HTADnD
 					MessageDialog.openError(shlDndGeneratorV, "Entry Error", "Invalid number of players (Wrong Type)");
 					return;
 				}
-				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
-				
-				chaptOut.setText(journey.adventureOutput());
 			}
 		});
-		addChapters.setBounds(186, 442, 157, 25);
+		addChapters.setBounds(186, 448, 157, 25);
 		addChapters.setToolTipText("Generate Selected things");
 		addChapters.setText("Add Chapter(s)");
 		
@@ -210,32 +222,59 @@ public class HTADnD
 		checkGenQuest.setToolTipText("Select this checkbox if you would like a quest to be generated");
 		checkGenQuest.setText("Generate Quest Line");
 		
-		enemiesAndBossesOut = formToolkit.createText(shlDndGeneratorV, "New Text", SWT.NONE);
-		enemiesAndBossesOut.setBounds(10, 177, 120, 259);
-		enemiesAndBossesOut.setToolTipText("This is where enemies and bosses will be output to");
-		enemiesAndBossesOut.setEditable(false);
-		
 		Label lblChapters = new Label(shlDndGeneratorV, SWT.NONE);
 		lblChapters.setBounds(136, 104, 55, 15);
 		formToolkit.adapt(lblChapters, true, true);
 		lblChapters.setText("Chapters");
 		
-		Label lblEnemiesAndBosses = formToolkit.createLabel(shlDndGeneratorV, "Enemies and Bosses", SWT.NONE);
-		lblEnemiesAndBosses.setBounds(10, 156, 120, 15);
-		
-		chaptOut = new Text(shlDndGeneratorV, SWT.BORDER | SWT.MULTI | SWT.WRAP | SWT.V_SCROLL);
-		chaptOut.setBounds(136, 125, 207, 311);
-		formToolkit.adapt(chaptOut, true, true);
+		Label Enemieslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
+		Enemieslbl.setBounds(10, 156, 120, 15);
 		
 		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
+		//Device device = new Device();
+		Image image = new Image(display, "C:/Users/Jackson/Documents/GitHub/HTADnDUI/terrain.png"); 
 		MapViewer.setBounds(357, 21, 399, 415);
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
+		
+		GC gc = new GC(image); 
+		MapViewer.setBackgroundImage(image);
 		
 		Label lblMapalsoAvailible = new Label(shlDndGeneratorV, SWT.NONE);
 		lblMapalsoAvailible.setBounds(360, 0, 332, 15);
 		formToolkit.adapt(lblMapalsoAvailible, true, true);
 		lblMapalsoAvailible.setText("Map: (also availible as a PNG image)");
+		
+		ImageHyperlink imageLink = formToolkit.createImageHyperlink(shlDndGeneratorV, SWT.NONE);
+		imageLink.addHyperlinkListener(new IHyperlinkListener() {
+			public void linkActivated(HyperlinkEvent arg0) {
+			}
+			public void linkEntered(HyperlinkEvent arg0) {
+			}
+			public void linkExited(HyperlinkEvent arg0) {
+			}
+		});
+		imageLink.setBounds(641, 448, 115, 19);
+		formToolkit.paintBordersFor(imageLink);
+		imageLink.setText("Map");
+		
+		Button btnGenerateMap = new Button(shlDndGeneratorV, SWT.NONE);
+		btnGenerateMap.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) 
+			{
+			}
+		});
+		btnGenerateMap.setBounds(499, 448, 101, 25);
+		formToolkit.adapt(btnGenerateMap, true, true);
+		btnGenerateMap.setText("Generate Map");
+		
+		Label lblBosses = new Label(shlDndGeneratorV, SWT.NONE);
+		lblBosses.setBounds(10, 301, 55, 15);
+		formToolkit.adapt(lblBosses, true, true);
+		lblBosses.setText("Bosses");
+		
+
 
 	}
 }
