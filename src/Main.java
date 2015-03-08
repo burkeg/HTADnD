@@ -31,15 +31,14 @@ public class Main {
 		// these are "guards" and other name-less
 		bossCount = playerCount / 2 + (randNum(((playerCount / 3) * -1), (playerCount / 3))); 
 		// determines the amount of boss enemies for each encounter
-	    NameGenerator gen = new NameGenerator();
 	    RandomElements elements = new RandomElements();
 
-	    List<String> enemyNames = new ArrayList<String>();
-		List<String> bossNames = new ArrayList<String>();
+	    List<DnDCharacter> enemies = new ArrayList<DnDCharacter>();
+		List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
 		
 		for(int i = 0; i < bossCount; i++)
 		{
-			bossNames.add(gen.makeName());
+			//bosses.add(NameGenerator.makeName());
 		}
 		
 		for(int i = 0; i < enemyCount; i++)
