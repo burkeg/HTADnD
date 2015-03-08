@@ -25,6 +25,7 @@ public class Main {
 		elements.loadListElements(elements.getListEnchantments(), "src/resource/enchantments.txt");
 		elements.loadListElements(elements.getListAdjectivesPerson(), "src/resource/adjectives.txt");
 		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives.txt");
+		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
 		enemyCount = playerCount + 1 + (randNum(((playerCount / 2) * -1), (playerCount / 2))); 
 		// determines the amount of enemies for each encounter.

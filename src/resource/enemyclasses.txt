@@ -1,0 +1,13 @@
+Guard
+Bodyguard
+Knight
+Scofflaw
+Blackguard
+Minion
+Scoundrel
+Reprobate
+Ne'er-Do-Well
+Villain
+Bad Guy
+Toady
+Miscreant
