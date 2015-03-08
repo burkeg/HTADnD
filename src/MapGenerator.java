@@ -44,7 +44,7 @@ public class MapGenerator {
 			for (int i = 0; i < width; i++) {
 				if (map[i][j] != 0) {
 					if (map[i][j] >= 10)
-						map[i][j] = 'a';
+						map[i][j] += 87;
 					if (map[i][j] >= 'a') {
 						System.out.print((char) map[i][j] + " ");
 						continue;
