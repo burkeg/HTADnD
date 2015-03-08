@@ -30,7 +30,10 @@ public class Chapter
 		case 0:  //This is the case for an ASSASSINATION Mission
 				switch(chaptStoryID)
 				{
-					case 0: 
+					case 0: "You stole away inside, and found your assassination target waiting in slumber. your kill is"
+						+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
+						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face."
+						
 					break;
 					case 1:
 					break;
@@ -92,7 +95,8 @@ public class Chapter
 					case 1:
 					break;
 				}
-		case 7: //This is the case for the MASSACRE INNOCENTS Mission
+		case 7: //This is the case for the MASSACRE Mission
+			Flavor.add("ADVENTURE: MASSACRE")
 				switch(chaptStoryID)
 				{
 					case 0: 
@@ -101,14 +105,37 @@ public class Chapter
 					break;
 				}
 		case 8: // This is the case for the ESCAPE Mission 
-				switch(chaptStoryID)
+			Flavor.add("ADVENTURE: EXCAPE!")
+			switch(chaptStoryID)
 				{
 					case 0: 
+						Flavor.add(Main.elements.replaceWithRandom("one of the adventurers stumble as their ankle entwines with a wire just a few inches off the floor. "
+								+ "suddenly, the air is filled with a thick %ADJOBJECT smoke. You can't help but cough and your eyes burn uncontrollably. then, you hear a hiss. Arrows fly through"
+								+ "the air around you. you have to get out of here!"));
+						Flavor.add(Main.elements.replaceWithRandom("Fight: You jump out of the smoke and find yourselves surrounded by " + npcEnemies.size()
+								+ " %ADJPERSON "
+								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ ", Lead by the %ADJPERSON Commander "
+								+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
+								+ ". Prepare to fight!"
+								));
+						Flavor.add(Main.elements.replaceWithRandom("Flee: you attempt to run when one of your players takes an arrow to the knee."
+								+ "S/He falls, shouting for help. a %ADJPERSON"
+								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ "storms in, flailing a %ADJOBJECT."
+								+ " the gas continues to hurt your lungs and sear your eyes."));
+						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you sheild yourselves from the arrows by diving onto the ground,"
+								+ " and the gas wafts above you. Soon, the air clears and the arrows stop. you find yourself up against "
+								+ (npcEnemies.size() / 2)
+								+ " %RACE "
+								+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+								+ ", all of which are shamefully out of arrows. they begin to flee!"));
 					break;
 					case 1:
 					break;
 				}
 		case 9: //This is the case for the EXPLORE Mission
+			Flavor.add("ADVENTURE: EXPLORE!")
 				switch(chaptStoryID)
 				{
 					case 0: 
@@ -128,8 +155,7 @@ public class Chapter
 								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "
 								+ "You turn back, bruised from the hard ground and ceiling pressing against you.");
 					break;
-					case 1:
-						Flavor.add(" your foot slips into a trap on the "
+					case 1:	
 					break;
 				}
 		}
