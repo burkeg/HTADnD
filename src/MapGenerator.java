@@ -7,12 +7,16 @@ public class MapGenerator {
 		width = 20;
 		height = 30;
 	}
-	
+
 	public void makeCircle(int x, int y, int radius) {
 
-		for (int j = 0; j < height; j++) {
-			for (int i = 0; i < width; i++) {
+		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
+			for (int i = x - radius; i < x + radius && i >= 0 && i < height; i++) {
+				if (Math.abs(j - y) * Math.abs(j - y) + Math.abs(i - x)
+						* Math.abs(i - x) <= radius) {
+					map[i][j]++;
 
+				}
 			}
 		}
 	}
