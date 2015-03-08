@@ -25,7 +25,7 @@ public class Main {
 		map.printMap();
 		
 		MapDraw drawnMap = new MapDraw(300, 400, map);
-		drawnMap.setMap(map.getMap());
+		drawnMap.setColorMap(map.getMap());
 		drawnMap.saveImage();
 		
 		int highest = 0;
