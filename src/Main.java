@@ -48,6 +48,7 @@ public class Main {
 		for(int i = 0; i < enemyCount; i++)
 		{
 			DnDCharacter temp = new DnDCharacter();
+			temp.randomizeEnemyClass();
 			enemies.add(temp);
 		}
 		

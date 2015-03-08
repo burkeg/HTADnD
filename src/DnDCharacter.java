@@ -73,8 +73,11 @@ public class DnDCharacter {
 		{
 			//Add alignment gen here
 		}
-		
-		
+	}
+	
+	public void randomizeEnemyClass()
+	{
+		chaClass = Main.elements.getRandom(Main.elements.getListEnemyClasses());
 	}
 	
 	// the get and set for Character NAME
