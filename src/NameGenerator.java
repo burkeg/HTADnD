@@ -40,7 +40,6 @@ public class NameGenerator {
 
 		return name;
 	}
-	
 	public static String makeName(int letterRangeLower, int letterRangeUpper) {
 		String name = "";
 		boolean startVowel = false;
