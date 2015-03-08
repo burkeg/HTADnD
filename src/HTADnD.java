@@ -34,6 +34,7 @@ public class HTADnD
 	private Image image;
 	private Canvas MapViewer;
 	private Text ChaptersText;
+	private Button checkGenQuest;
 
 	/**
 	 * Launch the application.
@@ -154,8 +155,7 @@ public class HTADnD
 				}
 				try
 				{
-					ChaptersText.selectAll();
-					ChaptersText.clearSelection();
+					ChaptersText.setText("");
 				}
 				catch(Exception exc)
 				{
@@ -201,31 +201,19 @@ public class HTADnD
 					MessageDialog.openError(shlDndGeneratorV, "Entry Error", "Invalid number of players (Wrong Type)");
 					return;
 				}
-				
-				//ADVENTURE
 				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
+				//ADVENTURE
+				if(checkGenQuest.getSelection())
+					ChaptersText.setText(journey.adventureOutput());	
 				BossesList.setItems(journey.getBosses());
 				EnemiesList.setItems(journey.getEnemies());
-				ChaptersText.setText(journey.adventureOutput());
 			}
 		});
 		addChapters.setBounds(654, 452, 120, 25);
 		addChapters.setToolTipText("Generate Selected things");
 		addChapters.setText("Add Chapter(s)");
 		
-		Button checkGenEnemies = new Button(shlDndGeneratorV, SWT.CHECK);
-		checkGenEnemies.setBounds(136, 33, 195, 16);
-		checkGenEnemies.setSelection(true);
-		checkGenEnemies.setToolTipText("select this check box if you would like enemies to be generated");
-		checkGenEnemies.setText("Generate Enemies and Bosses");
-		
-		Button checkGenMap = new Button(shlDndGeneratorV, SWT.CHECK);
-		checkGenMap.setBounds(136, 57, 93, 16);
-		checkGenMap.setSelection(true);
-		checkGenMap.setToolTipText("Select this check box if you would like a map to be generated");
-		checkGenMap.setText("Generate Map");
-		
-		Button checkGenQuest = new Button(shlDndGeneratorV, SWT.CHECK);
+		checkGenQuest = new Button(shlDndGeneratorV, SWT.CHECK);
 		checkGenQuest.setBounds(136, 81, 143, 16);
 		checkGenQuest.setSelection(true);
 		checkGenQuest.setToolTipText("Select this checkbox if you would like a quest to be generated");
