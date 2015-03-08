@@ -51,7 +51,7 @@ public class Main {
 		}
 		
 		MapGenerator map = new MapGenerator(50, 60);
-		map.boxRandom(13, 20, 15, 20);
+		map.boxRandom(0, 0, 15, 20); //x, y, boxWidth, boxHeight
 		map.printMap();
 }
 
