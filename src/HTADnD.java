@@ -33,6 +33,7 @@ public class HTADnD
 	private MapArrayGenerator mappy = new MapArrayGenerator(459, 475);
 	private Image image;
 	private Canvas MapViewer;
+	private Text ChaptersText;
 
 	/**
 	 * Launch the application.
@@ -78,7 +79,7 @@ public class HTADnD
 		shlDndGeneratorV = new Shell();
 		shlDndGeneratorV.setAlpha(255);
 		//shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
-		shlDndGeneratorV.setSize(782, 516);
+		shlDndGeneratorV.setSize(800, 700);
 		shlDndGeneratorV.setText("DnD Generator V.6");
 		shlDndGeneratorV.setLayout(null);
 		
@@ -95,16 +96,12 @@ public class HTADnD
 		lblChapterCount.setText("Chapter Count");
 		
 		final List EnemiesList = new List(shlDndGeneratorV, SWT.BORDER);
-		EnemiesList.setBounds(10, 322, 120, 121);
+		EnemiesList.setBounds(10, 322, 369, 121);
 		formToolkit.adapt(EnemiesList, true, true);
 		
 		final List BossesList = new List(shlDndGeneratorV, SWT.BORDER);
-		BossesList.setBounds(10, 174, 120, 121);
+		BossesList.setBounds(10, 177, 369, 121);
 		formToolkit.adapt(BossesList, true, true);
-		
-		final List ChaptersList = new List(shlDndGeneratorV, SWT.BORDER);
-		ChaptersList.setBounds(136, 128, 207, 314);
-		formToolkit.adapt(ChaptersList, true, true);
 		
 		numPlayer = new Text(shlDndGeneratorV, SWT.BORDER);
 		numPlayer.setBounds(10, 31, 76, 21);
@@ -157,7 +154,8 @@ public class HTADnD
 				}
 				try
 				{
-					ChaptersList.removeAll();
+					ChaptersText.selectAll();
+					ChaptersText.clearSelection();
 				}
 				catch(Exception exc)
 				{
@@ -166,7 +164,7 @@ public class HTADnD
 				}
 			}
 		});
-		clearBtn.setBounds(351, 448, 75, 25);
+		clearBtn.setBounds(654, 527, 120, 25);
 		clearBtn.setToolTipText("Clear ALL");
 		clearBtn.setText("Clear");
 		
@@ -210,30 +208,30 @@ public class HTADnD
 				EnemiesList.setItems(journey.getEnemies());
 			}
 		});
-		addChapters.setBounds(186, 448, 157, 25);
+		addChapters.setBounds(654, 452, 120, 25);
 		addChapters.setToolTipText("Generate Selected things");
 		addChapters.setText("Add Chapter(s)");
 		
 		Button checkGenEnemies = new Button(shlDndGeneratorV, SWT.CHECK);
-		checkGenEnemies.setBounds(156, 33, 195, 16);
+		checkGenEnemies.setBounds(136, 33, 195, 16);
 		checkGenEnemies.setSelection(true);
 		checkGenEnemies.setToolTipText("select this check box if you would like enemies to be generated");
 		checkGenEnemies.setText("Generate Enemies and Bosses");
 		
 		Button checkGenMap = new Button(shlDndGeneratorV, SWT.CHECK);
-		checkGenMap.setBounds(156, 57, 93, 16);
+		checkGenMap.setBounds(136, 57, 93, 16);
 		checkGenMap.setSelection(true);
 		checkGenMap.setToolTipText("Select this check box if you would like a map to be generated");
 		checkGenMap.setText("Generate Map");
 		
 		Button checkGenQuest = new Button(shlDndGeneratorV, SWT.CHECK);
-		checkGenQuest.setBounds(156, 81, 143, 16);
+		checkGenQuest.setBounds(136, 81, 143, 16);
 		checkGenQuest.setSelection(true);
 		checkGenQuest.setToolTipText("Select this checkbox if you would like a quest to be generated");
 		checkGenQuest.setText("Generate Quest Line");
 		
 		Label lblChapters = new Label(shlDndGeneratorV, SWT.NONE);
-		lblChapters.setBounds(136, 104, 55, 15);
+		lblChapters.setBounds(10, 452, 55, 15);
 		formToolkit.adapt(lblChapters, true, true);
 		lblChapters.setText("Chapters");
 		lblChapters.setBackground(null);
@@ -245,7 +243,7 @@ public class HTADnD
 		MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
 		image = new Image(display, "terrain.png"); 
-		MapViewer.setBounds(357, 21, 399, 415);
+		MapViewer.setBounds(385, 21, 399, 415);
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
 		
@@ -267,7 +265,7 @@ public class HTADnD
 			public void linkExited(HyperlinkEvent arg0) {
 			}
 		});
-		imageLink.setBounds(641, 448, 115, 19);
+		imageLink.setBounds(698, 572, 76, 19);
 		formToolkit.paintBordersFor(imageLink);
 		imageLink.setText("Map");
 		imageLink.setBackground(null);
@@ -291,7 +289,7 @@ public class HTADnD
 				}
 			}
 		});
-		btnGenerateMap.setBounds(499, 448, 101, 25);
+		btnGenerateMap.setBounds(654, 488, 120, 25);
 		formToolkit.adapt(btnGenerateMap, true, true);
 		btnGenerateMap.setText("Generate Map");
 		
@@ -300,6 +298,10 @@ public class HTADnD
 		formToolkit.adapt(lblBosses, true, true);
 		lblBosses.setText("Bosses");
 		lblBosses.setBackground(null);
+		
+		ChaptersText = new Text(shlDndGeneratorV, SWT.BORDER);
+		ChaptersText.setBounds(10, 477, 613, 174);
+		formToolkit.adapt(ChaptersText, true, true);
 
 
 	}
