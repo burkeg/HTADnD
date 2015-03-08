@@ -90,5 +90,28 @@ public class MapArrayGenerator {
 		int randomInt = rand.nextInt((max - min) + 1) + min;
 		return randomInt;
 	}
+	
+	public void scaleUp(int[][] aray)
+	{
+		int[][] bray = new int[1197][1245];
+		for (int j = 0; j < 415; j+=3)
+		{
+			for(int i = 0; i < 399; i+=3)
+			{
+				setPix(j, i, aray[i][j], bray);
+			}
+		}
+			
+	}
+	
+	public void setPix(int j, int i, int pix, int[][] bray)
+	{
+		int l = i * 3;
+		int k = j * 3;
+		int[] row = {pix, pix, pix};
+		System.arraycopy(row, 0, bray[k], l, 3);
+		System.arraycopy(row, 0, bray[k+1], l, 3);
+		System.arraycopy(row, 0, bray[k+2], l, 3);
+	}
 
 }
