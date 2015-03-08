@@ -11,7 +11,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.wb.swt.SWTResourceManager;
+//import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.PaintEvent;
@@ -30,6 +30,7 @@ public class HTADnD
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	private Display display;
+	private MapArrayGenerator mappy = new MapArrayGenerator(459,475);
 
 	/**
 	 * Launch the application.
@@ -73,8 +74,8 @@ public class HTADnD
 	{
 		//display = new Display();
 		shlDndGeneratorV = new Shell();
-		shlDndGeneratorV.setAlpha(0);
-		shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
+		shlDndGeneratorV.setAlpha(255);
+		//shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
 		shlDndGeneratorV.setSize(782, 516);
 		shlDndGeneratorV.setText("DnD Generator V.6");
 		shlDndGeneratorV.setLayout(null);
@@ -241,7 +242,7 @@ public class HTADnD
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
 		
-		GC gc = new GC(image); 
+		//GC gc = new GC(image); 
 		MapViewer.setBackgroundImage(image);
 		
 		Label lblMapalsoAvailible = new Label(shlDndGeneratorV, SWT.NONE);
@@ -269,6 +270,14 @@ public class HTADnD
 			@Override
 			public void widgetSelected(SelectionEvent e) 
 			{
+				try
+				{
+					mappy.generateMap();
+				}
+				catch(Exception exc)
+				{
+					exc.printStackTrace();
+				}
 			}
 		});
 		btnGenerateMap.setBounds(499, 448, 101, 25);
