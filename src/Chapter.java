@@ -13,6 +13,7 @@ public class Chapter
 	private int enemyCount; // this is the count of enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once the program compiles
 	private int bossCount; // this is the count of boss enemies that should be made for the adventure. THEY ARE NOT MADE YET, must be made once compiled.
 	
+	private List<String> Flavor = new ArrayList();
 	public List<DnDCharacter> npcBosses = new ArrayList();
 	public List<DnDCharacter> npcEnemies = new ArrayList();
 
@@ -124,6 +125,10 @@ public class Chapter
 				switch(chaptStoryID)
 				{
 					case 0: 
+						Flavor.add( "you're strolling, taking your time, when the ground suddenly gives out below you. You've fallen to a subterranian wonderland."
+							+ "the walls flash in the surfaces light, slightly damp and oddly beautiful. there are "
+							+ playerCount + " tunnels leading out of the room you are in.");
+						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " main.elements.)
 					break;
 					case 1:
 					break;
