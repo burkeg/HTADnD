@@ -10,6 +10,10 @@ public class MapGenerator {
 		this.height = height;
 		map = new int[width][height];
 	}
+	
+	public int[][] getMap() {
+		return map;
+	}
 
 	public void makeCircle(int x, int y, int radius) {
 
