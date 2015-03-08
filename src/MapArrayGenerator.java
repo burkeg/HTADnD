@@ -29,14 +29,14 @@ public class MapArrayGenerator {
 	}
 	
 	public void generateMap() {
-		makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
+		makeBiome(0, 0, width, height, 4600); //x, y, boxWidth, boxHeight, blotches
 		printMap();
 		MapDraw drawnMap = new MapDraw(width, height, this);
 		drawnMap.setColorMap(this.getMap());
 		
-		int count = 5;
+		int count = 100;
 		while (count > 0) {
-		drawnMap.makeSquare(Main.randNum(0, width), Main.randNum(0, height), 10);
+		drawnMap.makeSquare(Main.randNum(0, width), Main.randNum(0, height));
 			count--;
 		}
 		drawnMap.saveImage();
