@@ -20,8 +20,8 @@ public class Main {
 		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
-		MapGenerator map = new MapGenerator(50, 60);
-		map.makeBiome(0, 0, 50, 60, 6); //x, y, boxWidth, boxHeight
+		MapGenerator map = new MapGenerator(300, 400);
+		map.makeBiome(0, 0, 300, 400, 400); //x, y, boxWidth, boxHeight
 		map.printMap();
 }
 
