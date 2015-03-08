@@ -66,7 +66,7 @@ public class MapGenerator {
 	public void makeBiome(int blobs) {
 		boolean[][] trueBiomes = new boolean[5][5];
 		while(blobs > 0) {
-			if (randNum(0, 4) > 0)
+			if (randNum(0, 4) > 0)//
 				
 		}
 	}
