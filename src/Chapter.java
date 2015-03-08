@@ -66,46 +66,32 @@ public class Chapter
 				break;
 				
 		case 1: //This is the case for a STEAL ITEM Mission
-				switch(chaptStoryID)
-				{
-					case 0: Flavor.add(Main.elements.replaceWithRandom("a large convoy marches along the street, and between the armored "
-							+ npcEnemies.get(enemyId).getCName()
-							+ " you see a large chariot being pulled by "
-							+ npcEnemies.get(enemyId).getCRace()
-							+ " servants. The woman inside the chariot waves to the masses dantily with one hand, and her %ADJOBJECT crown catches the sun's light,"
-							+ " as well as your eye."));
-					Flavor.add(Main.elements.replaceWithRandom("Steal the crown: You slip through the crowd and jump past the "
-							+ npcEnemies.get(enemyId).getCName()
-							+ "s and "
-							+ npcEnemies.get(enemyId).getCRace()
-							+ ", grabbing the crown and winking at the woman as you dart away."));
-					Flavor.add(Main.elements.replaceWithRandom("steal the crown and fail: you jump through the crowd, but the "
-							+ npcEnemies.get(enemyId).getCName()
-							+ "catch you and encircle you. there are three of them but only one of you!"));
-					break;
-					case 1: 
-					break;
-
-				}
-				break;
+			 Flavor.add(Main.elements.replaceWithRandom("a large convoy marches along the street, and between the armored "
+					+ npcEnemies.get(enemyId).getCName()
+					+ " you see a large chariot being pulled by "
+					+ npcEnemies.get(enemyId).getCRace()
+					+ " servants. The woman inside the chariot waves to the masses dantily with one hand, and her %ADJOBJECT crown catches the sun's light,"
+					+ " as well as your eye."));
+			Flavor.add(Main.elements.replaceWithRandom("Steal the crown: You slip through the crowd and jump past the "
+					+ npcEnemies.get(enemyId).getCName()
+					+ "s and "
+					+ npcEnemies.get(enemyId).getCRace()
+					+ ", grabbing the crown and winking at the woman as you dart away."));
+			Flavor.add(Main.elements.replaceWithRandom("steal the crown and fail: you jump through the crowd, but the "
+					+ npcEnemies.get(enemyId).getCName()
+					+ "catch you and encircle you. there are three of them but only one of you!"));
+			break;
+		
 		case 2: //This is the case for the DEFEND PLACE Mission
-				switch(chaptStoryID)
-				{
-					case 0: Flavor.add("You are informed by the Captain of the Guard that the city is in need of soldiers, and mercenaries will be well compensated.");
+				    Flavor.add("You are informed by the Captain of the Guard that the city is in need of soldiers, and mercenaries will be well compensated.");
 					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are payed respectfully.");
 					Flavor.add("get hurt: you were not skilled enough to be a mercenary, and you accidentally shoot an arrow into your foot. you hurt yourself"
 							+ "and your dignity.");
-						
-					break;
-
-				}
 				break;
-		case 3: //This is the case for the DEFEND PEOPLE Mission
-				switch(chaptStoryID)
-				{
-					case 0:
-						String oldManName = NameGenerator.makeName();
-						Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
+				
+		case 3: //This is the case for the DEFEND PEOPLE Mission.
+					String oldManName = NameGenerator.makeName();
+					Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
 							+ oldManName
 							+ " and pleads with you, 'We've heard of you, your kind. We know what you're capable of. We need you. "
 							+ "A ravenous army of "
@@ -129,14 +115,9 @@ public class Chapter
 							+ ". you take the magic items and leave."));
 							
 					break;
-					case 1:
-					break;
 
-				}
 		case 4: //This is the case for the CONVINCE NPC Mission
-				switch(chaptStoryID) 
-				{
-					case 0: Flavor.add(Main.elements.replaceWithRandom("You approach an old cobblestone church, and a %ADJPERSON priest meets you at the door."
+				    Flavor.add(Main.elements.replaceWithRandom("You approach an old cobblestone church, and a %ADJPERSON priest meets you at the door."
 							+ "He insists he wants no trouble and insists you go on your way."));
 					Flavor.add(Main.elements.replaceWithRandom("Persuade for help: He takes pity on you, and offers you some %ADJOBJECT bread and %ADJOBJECT ale."));
 					Flavor.add("Raid the Church: Before you can attempt to get in the door, the priest slams the door and barrs it.");
@@ -153,7 +134,6 @@ public class Chapter
 							+ "are upon you. they take you to an alley and toss you in a dumpster as the Merchant walks away unharmed.");
 					break;
 
-				}
 		case 5: //This is the case for the SLAY MONSTERS (MASSACRE) Mission
 				switch(chaptStoryID)
 				{
