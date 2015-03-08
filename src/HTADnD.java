@@ -11,7 +11,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.swt.widgets.Table;
-//import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.PaintEvent;
@@ -30,7 +30,6 @@ public class HTADnD
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	private Display display;
-	private MapArrayGenerator mappy;
 
 	/**
 	 * Launch the application.
@@ -74,6 +73,8 @@ public class HTADnD
 	{
 		//display = new Display();
 		shlDndGeneratorV = new Shell();
+		shlDndGeneratorV.setAlpha(0);
+		shlDndGeneratorV.setBackground(SWTResourceManager.getColor(240, 240, 240));
 		shlDndGeneratorV.setSize(782, 516);
 		shlDndGeneratorV.setText("DnD Generator V.6");
 		shlDndGeneratorV.setLayout(null);
@@ -227,15 +228,15 @@ public class HTADnD
 		lblChapters.setBounds(136, 104, 55, 15);
 		formToolkit.adapt(lblChapters, true, true);
 		lblChapters.setText("Chapters");
+		lblChapters.setBackground(null);
 		
-		Label Characterslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
-		Characterslbl.setBounds(10, 156, 120, 15);
-		formToolkit.adapt(Characterslbl, true, true);
-		Characterslbl.setText("Charcters");
+		Label Enemieslbl = formToolkit.createLabel(shlDndGeneratorV, "Enemies", SWT.NONE);
+		Enemieslbl.setBackground(null);
+		Enemieslbl.setBounds(10, 156, 120, 15);
 		
 		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
-		Image image = new Image(display, "terrain.png"); 
+		Image image = new Image(display, "C:/Users/Jackson/Documents/GitHub/HTADnDUI/terrain.png"); 
 		MapViewer.setBounds(357, 21, 399, 415);
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
@@ -247,6 +248,7 @@ public class HTADnD
 		lblMapalsoAvailible.setBounds(360, 0, 332, 15);
 		formToolkit.adapt(lblMapalsoAvailible, true, true);
 		lblMapalsoAvailible.setText("Map: (also availible as a PNG image)");
+		lblMapalsoAvailible.setBackground(null);
 		
 		ImageHyperlink imageLink = formToolkit.createImageHyperlink(shlDndGeneratorV, SWT.NONE);
 		imageLink.addHyperlinkListener(new IHyperlinkListener() {
@@ -260,31 +262,24 @@ public class HTADnD
 		imageLink.setBounds(641, 448, 115, 19);
 		formToolkit.paintBordersFor(imageLink);
 		imageLink.setText("Map");
+		imageLink.setBackground(null);
 		
 		Button btnGenerateMap = new Button(shlDndGeneratorV, SWT.NONE);
 		btnGenerateMap.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) 
 			{
-				//try
-				{
-					mappy.generateMap();
-				}
-				//catch(exception exc)
-				{
-					//MessageDialog.openError
-				}
 			}
 		});
 		btnGenerateMap.setBounds(499, 448, 101, 25);
 		formToolkit.adapt(btnGenerateMap, true, true);
 		btnGenerateMap.setText("Generate Map");
 		
-		Label lblMonsters = new Label(shlDndGeneratorV, SWT.NONE);
-		lblMonsters.setBounds(10, 301, 55, 15);
-		formToolkit.adapt(lblMonsters, true, true);
-		lblMonsters.setText("Monsters");
-		
+		Label lblBosses = new Label(shlDndGeneratorV, SWT.NONE);
+		lblBosses.setBounds(10, 301, 55, 15);
+		formToolkit.adapt(lblBosses, true, true);
+		lblBosses.setText("Bosses");
+		lblBosses.setBackground(null);
 
 
 	}
