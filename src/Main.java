@@ -50,8 +50,8 @@ public class Main {
 			//enemies.add(temp);
 		}
 		
-		MapGenerator map = new MapGenerator(50, 60);
-		map.makeBiome(0, 0, 50, 60, 6); //x, y, boxWidth, boxHeight
+		MapGenerator map = new MapGenerator(100, 120);
+		map.makeBiome(0, 0, 100, 120, 25); //x, y, boxWidth, boxHeight
 		map.printMap();
 }
 
