@@ -20,7 +20,7 @@ public class Main {
 		map.makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
 		map.printMap();
 				
-		MapDraw drawnMap = new MapDraw(width, height, map);
+		MapDraw drawnMap = new MapDraw(width, height, this);
 		drawnMap.setColorMap(map.getMap());
 		drawnMap.makeSquare(100, 100, 15);
 		drawnMap.saveImage();

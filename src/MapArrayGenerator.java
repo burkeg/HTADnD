@@ -28,6 +28,16 @@ public class MapArrayGenerator {
 		}
 	}
 	
+	public void generateMap() {
+		MapDraw drawnMap = new MapDraw(width, height, this);
+		drawnMap.setColorMap(this.getMap());
+		drawnMap.saveImage();
+	}
+	
+	public void resetMap() {
+		
+	}
+	
 	public void makeCircle(int x, int y, int radius, double noise) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
@@ -104,7 +114,7 @@ public class MapArrayGenerator {
 			
 	}
 	
-	public void setPix(int j, int i, int pix, int[][] bray)
+	public void setPix(int i, int j, int pix, int[][] bray)
 	{
 		int l = i * 3;
 		int k = j * 3;
