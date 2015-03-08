@@ -1,15 +1,32 @@
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class MapDraw {
 	int width;
 	int height;
 	BufferedImage bi;
 	MapGenerator genMap;
+	
+	public BufferedImage getImage() {
+		return bi;
+	}
+	
+	public void saveImage() {
+		try {
+		    File outputfile = new File("saved.png");
+		    ImageIO.write(bi, "png", outputfile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public MapDraw(int width, int height, MapGenerator map) {
 		this.width = width;
 		this.height = height;
-		bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		genMap = map;
 	}
 
