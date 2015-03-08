@@ -9,7 +9,9 @@ public class Main {
 	public static RandomElements elements = new RandomElements(); 
 	// Global variable holding the Random Elements
 
-	public static void main(String[] args) {}
+	public static void main(String[] args) {
+		System.out.println(NameGenerator.makeName());
+	}
 
 	static int randNum(int min, int max) {
 		Random rand = new Random();

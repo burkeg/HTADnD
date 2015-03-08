@@ -25,16 +25,16 @@ public class NameGenerator {
 		boolean startVowel = false;
 		int cacaboo = Main.randNum(0, 50);
 		int rand = (int) (Math.random() * 2 + 3);
-		if (cacaboo == 33)
-			name += "kakakar";
+		//if (cacaboo == 33)
+			//name += "kakakar";
 		for (int i = 0; i < rand; i++) {
 			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
 			if (startVowel) {
 				name += getVowel();
-				startVowel = true;
+				startVowel = false;
 			} else {
 				name += getConsonant();
-				startVowel = false;
+				startVowel = true;
 			}
 		}
 
@@ -48,10 +48,10 @@ public class NameGenerator {
 			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
 			if (startVowel) {
 				name += getVowel();
-				startVowel = true;
+				startVowel = false;
 			} else {
 				name += getConsonant();
-				startVowel = false;
+				startVowel = true;
 			}
 		}
 
@@ -65,10 +65,10 @@ public class NameGenerator {
 			// if (Math.random() + (weightedValue* 4.0/10.0)< 0.5) {
 			if (startVowel) {
 				name += getVowel();
-				startVowel = true;
+				startVowel = false;
 			} else {
 				name += getConsonant();
-				startVowel = false;
+				startVowel = true;
 			}
 		}
 

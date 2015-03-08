@@ -140,10 +140,11 @@ public class Chapter
 							+ "are upon you. they take you to an alley and toss you in a dumpster as the Merchant walks away unharmed.");
 					break;
 			}
-
+			break;
 		case 5: //This is the case for the SLAY MONSTER Mission
 			Flavor.add("CHAPTER: SLAY MONSTER!");
-			Flavor.add("You come across a lone beast, raving mad and completely %ABJPERSON. it charges at you but you raise your shield just in time!");
+			Flavor.add("You come across a lone beast, raving mad and completely %ADJPERSON. it charges at you but you raise your shield just in time!");
+			break;
 			
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
 			Flavor.add("CHAPTER: SLAY BOSS!");
