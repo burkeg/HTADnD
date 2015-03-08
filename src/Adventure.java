@@ -92,13 +92,13 @@ public class Adventure {
 			for (int n = 0; n < chapterFlavor.size(); n++)
 			{
 				output += chapterFlavor.get(n);
-				output += "\n";
+				output += "\n\n";
 			}
 			
 			output += "\n";
 		}
 		
-		return output;
+		return Main.elements.replaceWithRandom(output);
 	}
 	
 }

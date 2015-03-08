@@ -183,6 +183,8 @@ public class HTADnD
 					return;
 				}
 				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
+				
+				chaptOut.setText(journey.adventureOutput());
 			}
 		});
 		addChapters.setBounds(186, 442, 157, 25);
@@ -220,7 +222,7 @@ public class HTADnD
 		Label lblEnemiesAndBosses = formToolkit.createLabel(shlDndGeneratorV, "Enemies and Bosses", SWT.NONE);
 		lblEnemiesAndBosses.setBounds(10, 156, 120, 15);
 		
-		chaptOut = new Text(shlDndGeneratorV, SWT.BORDER);
+		chaptOut = new Text(shlDndGeneratorV, SWT.BORDER | SWT.MULTI | SWT.WRAP | SWT.V_SCROLL);
 		chaptOut.setBounds(136, 125, 207, 311);
 		formToolkit.adapt(chaptOut, true, true);
 		

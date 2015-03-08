@@ -38,6 +38,7 @@ public class Main {
 	static int randNum(int min, int max) {
 		Random rand = new Random();
 		int randomInt = rand.nextInt((max - min) + 1) + min;
+		if(randomInt < 0) { randomInt = 0; } //Make sure we're not returning a negative integer (we use this for indices a lot)
 		return randomInt;
 	}
 }
