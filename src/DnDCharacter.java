@@ -128,7 +128,7 @@ public class DnDCharacter {
 	{
 		return chaClass;
 	}
-	public void setClass(String cClass)
+	public void setCClass(String cClass)
 	{
 		chaClass = cClass; 
 	}

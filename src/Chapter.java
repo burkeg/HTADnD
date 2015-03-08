@@ -50,7 +50,7 @@ public class Chapter
 					Flavor.add(Main.elements.replaceWithRandom("Follow: You follow the mad assassin through the alleys and the bazaar. he stops in an outhouse, "
 							+ "and when he comes out, he is no longer wearing his uniform, and  you learn that the mad assassin is actually a she!! "
 							+ "you follow her, where she returns home to her husband and"
-							+ " children, and through the window, you watch them make love. all of them. why would you follow her? thats creepy stalker, bro."
+							+ " children, and through the window, you watch them make love. why would you follow her? thats creepy stalker, bro."));
 
 					break;
 				}
@@ -79,10 +79,27 @@ public class Chapter
 		case 3: //This is the case for the DEFEND PEOPLE Mission
 				switch(chaptStoryID)
 				{
-					case 0:
-						/*
-						 * "We've heard of you, your kind. We know what you're capable of. We need you. A ravenous army of %ENEMYCLASS are on their way. At the helm of the horde is a %OBJECT laced with %ENCHANTMENT-magic. If you save our village, protect us, then it's yours. We'll aid you as we can, but if you falter, come the end of the week, there will be nothing that remains."
-						 */
+					case 0: Flavor.add(Main.elements.replaceWithRandom("An old man approaches you from the nearby encampment. he introduces himself as "
+							+ NameGenerator.makeName()
+							+ " and pleads with you, 'We've heard of you, your kind. We know what you're capable of. We need you. "
+							+ "A ravenous army of "
+							+ npcEnemies.get(1).getCClass()
+							+ " are on their way. At the helm of the horde is a %OBJECT laced with "
+							+ "%ENCHANTMENT-magic. If you save our village, protect us, then it's yours. "
+							+ "We'll aid you as we can, but if you falter, come the end of the week, there will be nothing that remains."));
+					
+					Flavor.add(Main.elements.replaceWithRandom("Lead the Vanguard: You charge fearlessly into battle. you find yourselves in close combat with + "
+							+ (playerCount +2) 
+							+ " "
+							+ npcEnemies.get(1).getCRace()
+							+ " "
+							+ npcEnemies.get(1).getCClass()
+							+ "s. fight for your honor!"));
+					Flavor.add(Main.elements.replaceWithRandom("Arm the encampment's defenses: relying more on a defensive approach, you unleash arrow after"
+							+ " arrow on the invading "
+							+ npcEnemies.get(1).getCRace()
+							+ ", but the waves do not yield. the encampment is held, but most of the men, including "
+							
 					break;
 					case 1:
 					break;
