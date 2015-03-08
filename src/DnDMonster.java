@@ -4,7 +4,7 @@ public class DnDMonster
 	private String monsterSpecies;
 	private int monsterLevel;
 	
-	public DnDMonster( String monSpecies, int monLevel)
+	public DnDMonster(String monSpecies, int monLevel)
 	{
 		monsterSpecies = monSpecies;
 		monsterLevel = monLevel;

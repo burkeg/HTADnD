@@ -12,10 +12,12 @@ public class Adventure {
 	int bossCount; // this is the count of enemies that are actually
 						// named. the count of these are NOT considered in
 						// the enemy count.
+	int monCount; //this is the count of enemies that
 	int avgLevel;
 	int chapterCount; //this is the count of chapters that is desired from the generator.
     List<DnDCharacter> enemies = new ArrayList<DnDCharacter>();
 	List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
+	List<DnDMonster> monsters = new ArrayList<DnDMonster>();
 	List<Chapter> chapters = new ArrayList<Chapter>();
 	
 	public Adventure()
@@ -39,7 +41,7 @@ public class Adventure {
 		initializeEnemies(); //Fills the boss and enemy arrays based on player count
 		for(int i = 0; i < chapterCount; i++)
 		{
-			Chapter newChapter = new Chapter(playerCount, bosses, enemies);
+			Chapter newChapter = new Chapter(playerCount, bosses, enemies, monsters);
 			chapters.add(newChapter);
 		}
 		
@@ -52,6 +54,7 @@ public class Adventure {
 		// these are "guards" and other name-less
 		bossCount = playerCount / 2 + (Main.randNum(((playerCount / 3) * -1), (playerCount / 3))); 
 		// determines the amount of boss enemies for each encounter
+		MonCount = playerCount + 1 + (Main.randNum(((playerCount / 2) * -1), (playerCount / 2)));
 		
 		for(int i = 0; i < bossCount; i++)
 		{

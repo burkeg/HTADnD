@@ -16,13 +16,15 @@ public class Chapter
 	private List<String> Flavor = new ArrayList();
 	public List<DnDCharacter> npcBosses = new ArrayList();
 	public List<DnDCharacter> npcEnemies = new ArrayList();
+	public List<DnDMonster> npcMonsters = new ArrayList();
 
-	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies)
+	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies, List<DnDMonster> monsters)
 	{
 		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
 		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
+		npcMonsters = monsters;
 		
 		
 		switch (chaptAdvID)
