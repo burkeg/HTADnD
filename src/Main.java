@@ -47,11 +47,11 @@ public class Main {
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
-			DnDCharacter temp = new DnDCharacter();
-			enemies.add(temp);
+			//DnDCharacter temp = new DnDCharacter();
+			//enemies.add(temp);
 		}
 		
-		MapGenerator map = new MapGenerator(20, 15);
+		MapGenerator map = new MapGenerator(50, 60);
 		map.printMap();
 		map.makeCircle(10, 6, 5);
 		System.out.printf("\n\n\n");
