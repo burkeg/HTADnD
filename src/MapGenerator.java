@@ -3,17 +3,18 @@ public class MapGenerator {
 	int width;
 	int height;
 
-	public MapGenerator() {
-		width = 20;
-		height = 30;
+	public MapGenerator(int width, int height) {
+		this.width = width;
+		this.height = height;
+		map = new int[width][height];
 	}
 
 	public void makeCircle(int x, int y, int radius) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
-			for (int i = x - radius; i < x + radius && i >= 0 && i < height; i++) {
+			for (int i = x - radius; i < x + radius && i >= 0 && i < width; i++) {
 				if (Math.abs(j - y) * Math.abs(j - y) + Math.abs(i - x)
-						* Math.abs(i - x) <= radius) {
+						* Math.abs(i - x) < radius*radius) {
 					map[i][j]++;
 
 				}
