@@ -33,7 +33,7 @@ public class Chapter
 					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
 						+ npcBosses.get(randNum(0, npcBosses.size())).getCName()
 						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
-					Flavor.add("Stab: you stab th")
+					Flavor.add("Stab: you stab th");
 						
 					break;
 					case 1: Flavor.add(Main.elements.replaceWithRandom("Surely you've heard of the mad assassin? Kept in the chambers of the castle? "
@@ -50,7 +50,11 @@ public class Chapter
 					Flavor.add(Main.elements.replaceWithRandom("Follow: You follow the mad assassin through the alleys and the bazaar. he stops in an outhouse, "
 							+ "and when he comes out, he is no longer wearing his uniform, and  you learn that the mad assassin is actually a she!! "
 							+ "you follow her, where she returns home to her husband and"
+<<<<<<< HEAD
 							+ " children, and through the window, you watch them make love. why would you follow her? thats creepy stalker, bro."));
+=======
+							+ " children, and through the window, you watch them make love. all of them. why would you follow her? thats creepy stalker, bro."));
+>>>>>>> origin/master
 
 					break;
 				}
@@ -201,6 +205,10 @@ public class Chapter
 		}
 	}
 	
+	public List<String> getFlavor()
+	{
+		return Flavor;
+	}
 	
 	public int randNum(int min, int max)
 	{

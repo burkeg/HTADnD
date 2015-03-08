@@ -10,6 +10,10 @@ public class MapGenerator {
 		this.height = height;
 		map = new int[width][height];
 	}
+	
+	public int[][] getMap() {
+		return map;
+	}
 
 	public void makeCircle(int x, int y, int radius) {
 
@@ -43,8 +47,8 @@ public class MapGenerator {
 		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {
 				if (map[i][j] != 0) {
-					if (map[i][j] == 10)
-						map[i][j] = 'a';
+					if (map[i][j] >= 10)
+						map[i][j] += 87;
 					if (map[i][j] >= 'a') {
 						System.out.print((char) map[i][j] + " ");
 						continue;
