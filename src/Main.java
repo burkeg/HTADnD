@@ -9,18 +9,7 @@ public class Main {
 	public static RandomElements elements = new RandomElements(); 
 	// Global variable holding the Random Elements
 
-	public static void main(String[] args) {
-
-
-		
-		int width = 459;
-		int height = 475;
-		
-		MapArrayGenerator map = new MapArrayGenerator(width, height);
-		//map.generateLargeMap();
-		map.generateMap();
-		
-}
+	public static void main(String[] args) {}
 
 	static int randNum(int min, int max) {
 		Random rand = new Random();
