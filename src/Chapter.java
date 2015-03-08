@@ -32,9 +32,9 @@ public class Chapter
 		{
 		
 		case 0:  //This is the case for an ASSASSINATION Mission
-				if(chaptStoryID = 0)
+				if(chaptStoryID == 0)
 				{
-					case 0: Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
+					Flavor.add("You stole away inside, and found your assassination target waiting in slumber. your kill is"
 						+ npcBosses.get(bossId).getCName()
 						+ " the %ADJPERSON. Tiredly they wait, snoring amid moonbeams that dance upon their face.");
 					Flavor.add("Stab: you stab them, "
@@ -43,8 +43,8 @@ public class Chapter
 							+ "are quickly on you!");
 					Flavor.add(Main.elements.replaceWithRandom("Poison: you slip a couple of the %ADJOBJECT Poison Between their lips. The target does not wake, "
 							+ "and you slip out just as you came in."));
-						
-					br
+				}
+					
 					case 1: Flavor.add(Main.elements.replaceWithRandom("Surely you've heard of the mad assassin? Kept in the chambers of the castle? "
 							+ "Set high above the kingdom, held aloft in the recesses of the mightiest towers, "
 							+ "where the royalty uses them? They sate the assassin's needs, feed him, clothe him, and prepare him?"
