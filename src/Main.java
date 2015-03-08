@@ -47,7 +47,6 @@ public class Main {
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
-<<<<<<< HEAD
 			DnDCharacter temp = new DnDCharacter();
 			mEnemies.add(temp);
 		}
@@ -59,14 +58,11 @@ public class Main {
 		}
 		
 		
-		MapGenerator map = new MapGenerator(20, 15);
-=======
-			//DnDCharacter temp = new DnDCharacter();
-			//enemies.add(temp);
-		}
+		
+
+
 		
 		MapGenerator map = new MapGenerator(50, 60);
->>>>>>> 86a638f6e1920a160e606f994146e56dcbc586c2
 		map.printMap();
 		map.makeCircle(10, 6, 5);
 		System.out.printf("\n\n\n");
