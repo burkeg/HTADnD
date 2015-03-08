@@ -20,17 +20,17 @@ public class Main {
 		elements.loadListElements(elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		
-		MapGenerator map = new MapGenerator(300, 400);
-		map.makeBiome(0, 0, 300, 400, 2300); //x, y, boxWidth, boxHeight, blotches
+		MapGenerator map = new MapGenerator(460, 470);
+		map.makeBiome(0, 0, 460, 470, 2300); //x, y, boxWidth, boxHeight, blotches
 		map.printMap();
 		
-		MapDraw drawnMap = new MapDraw(300, 400, map);
+		MapDraw drawnMap = new MapDraw(460, 470, map);
 		drawnMap.setMap(map.getMap());
 		drawnMap.saveImage();
 		
 		int highest = 0;
-		for (int j = 0; j < 400; j++) {
-			for (int i = 0; i < 300; i++) {
+		for (int j = 0; j < 470; j++) {
+			for (int i = 0; i < 460; i++) {
 				if (map.getMap()[i][j] > highest)
 					highest = map.getMap()[i][j];
 			}
