@@ -20,7 +20,7 @@ public class Chapter
 	public Chapter(int players, List<DnDCharacter> bosses, List<DnDCharacter> enemies)
 	{
 		chaptAdvID = randNum(0, 9); // a random decision of the adventure type
-		chaptStoryID = randNum(0, 2); //a random decision of the story flavor text
+		chaptStoryID = randNum(0, 1); //a random decision of the story flavor text
 		npcBosses = bosses;
 		npcEnemies = enemies;
 		
@@ -34,8 +34,6 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
 				}
 				break;
 				
@@ -46,8 +44,7 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
+
 				}
 				break;
 		case 2: //This is the case for the DEFEND PLACE Mission
@@ -57,8 +54,7 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
+
 				}
 				break;
 		case 3: //This is the case for the DEFEND PEOPLE Mission
@@ -68,8 +64,7 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
+
 				}
 		case 4: //This is the case for the CONVINCE NPC Mission
 				switch(chaptStoryID) 
@@ -78,8 +73,7 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
+
 				}
 		case 5: //This is the case for the SLAY MONSTERS (MASSACRE) Mission
 				switch(chaptStoryID)
@@ -88,8 +82,7 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
+
 				}
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
 				switch(chaptStoryID)
@@ -97,8 +90,6 @@ public class Chapter
 					case 0: 
 					break;
 					case 1:
-					break;
-					case 2:
 					break;
 				}
 		case 7: //This is the case for the MASSACRE INNOCENTS Mission
@@ -108,8 +99,6 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
 				}
 		case 8: // This is the case for the ESCAPE Mission 
 				switch(chaptStoryID)
@@ -118,8 +107,6 @@ public class Chapter
 					break;
 					case 1:
 					break;
-					case 2:
-					break;
 				}
 		case 9: //This is the case for the EXPLORE Mission
 				switch(chaptStoryID)
@@ -127,12 +114,22 @@ public class Chapter
 					case 0: 
 						Flavor.add( "you're strolling, taking your time, when the ground suddenly gives out below you. You've fallen to a subterranian wonderland."
 							+ "the walls flash in the surfaces light, slightly damp and oddly beautiful. there are "
-							+ playerCount + " tunnels leading out of the room you are in.");
-						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " main.elements.)
+							+ "3 tunnels leading out of the room you are in.");
+						Flavor.add( "Tunnel 1: you encounted a madman, dressed in the garb of a " 
+							+ Main.elements.getRandom(Main.elements.getListAdjectivesPerson())
+							+ " "
+							+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+							+ " from years past. he has clearly lost his mind, but not his weapon. he jumps in to attack!");
+						Flavor.add( "Tunnel 2: the long and winding tunnel opens to a wide cavern, with an underground river flowing hard over your path."
+							+ "You turn to see a group of cave-dwelling "
+							+ npcEnemies.get(randNum(0, npcEnemies.size())).getCName()
+							+ ", who have abandoned their wits long ago. they have not yet spotted you.");
+						Flavor.add("Tunnel 3: The long tunnel is straight as an arrow, but it's ceiling dips and rises and you continue along. you soon find yourself"
+								+ "crouching, then crawling, and then wriggling as you continue along. you see the light ahead, but you cannot go any further. "
+								+ "You turn back, bruised from the hard ground and ceiling pressing against you.");
 					break;
 					case 1:
-					break;
-					case 2:
+						Flavor.add(" your foot slips into a trap on the "
 					break;
 				}
 		}
