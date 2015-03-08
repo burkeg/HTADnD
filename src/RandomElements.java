@@ -37,6 +37,8 @@ public class RandomElements {
 	}
 	
 	//Select a random element from the list specified when called
+	//example:
+	//String str = Main.element.getRandom(Main.element.getListRaces());
 	public String getRandom(List<String> getList)
 	{
 		int index = Main.randNum(0,getList.size());
@@ -46,14 +48,25 @@ public class RandomElements {
 	public String replaceWithRandom(String input)
 	{
 		String output = input;
-		output = output.replaceAll("%ADJPERSON", getRandom(getListAdjectivesPerson()));
-		output = output.replaceAll("%ADJOBJECT", getRandom(getListAdjectivesObject()));
-		output = output.replaceAll("%RACE", getRandom(getListRaces()));
-		output = output.replaceAll("%CLASS", getRandom(getListClasses()));
-		output = output.replaceAll("%ENEMYCLASS", getRandom(getListEnemyClasses()));
-		output = output.replaceAll("%DEITY", getRandom(getListDeities()));
-		output = output.replaceAll("%GOAL", getRandom(getListGoals()));
-		output = output.replaceAll("%ENCHANTMENT", getRandom(getListEnchantments()));
+		while (output.indexOf("%ADJPERSON") != -1
+				&& output.indexOf("%ADJOBJECT") != -1
+				&& output.indexOf("%RACE") != -1
+				&& output.indexOf("%CLASS") != -1
+				&& output.indexOf("%ENEMYCLASS") != -1
+				&& output.indexOf("%DEITY") != -1
+				&& output.indexOf("%GOAL") != -1
+				&& output.indexOf("%ENCHANTMENT") != -1
+				) //while there's a %macro present in the input string...  
+		{
+			output = output.replaceFirst("%ADJPERSON", getRandom(getListAdjectivesPerson()));
+			output = output.replaceFirst("%ADJOBJECT", getRandom(getListAdjectivesObject()));
+			output = output.replaceFirst("%RACE", getRandom(getListRaces()));
+			output = output.replaceFirst("%CLASS", getRandom(getListClasses()));
+			output = output.replaceFirst("%ENEMYCLASS", getRandom(getListEnemyClasses()));
+			output = output.replaceFirst("%DEITY", getRandom(getListDeities()));
+			output = output.replaceFirst("%GOAL", getRandom(getListGoals()));
+			output = output.replaceFirst("%ENCHANTMENT", getRandom(getListEnchantments()));
+		}
 		return output;
 	}
 	
