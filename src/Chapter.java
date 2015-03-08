@@ -184,6 +184,10 @@ public class Chapter
 		}
 	}
 	
+	public List<String> getFlavor()
+	{
+		return Flavor;
+	}
 	
 	public int randNum(int min, int max)
 	{

@@ -18,20 +18,31 @@ public class Adventure {
 	List<DnDCharacter> bosses = new ArrayList<DnDCharacter>();
 	List<Chapter> chapters = new ArrayList<Chapter>();
 	
-	public void Adventure()
+	public Adventure()
 	{
 		playerCount = 2;
 		avgLevel = 1;
 		chapterCount = 1;
-		initializeEnemies();
+		initializeAdventure();
 	}
 	
-	public void Adventure (int players, int level, int chapters)
+	public Adventure (int players, int level, int chapters)
 	{
 		playerCount = players;
 		avgLevel = level;
 		chapterCount = chapters;
-		initializeEnemies();
+		initializeAdventure();
+	}
+	
+	public void initializeAdventure() //Call to initialize an adventure after constructing
+	{
+		initializeEnemies(); //Fills the boss and enemy arrays based on player count
+		for(int i = 0; i < chapterCount; i++)
+		{
+			Chapter newChapter = new Chapter(playerCount, bosses, enemies);
+			chapters.add(newChapter);
+		}
+		
 	}
 	
 	private void initializeEnemies()
@@ -57,11 +68,37 @@ public class Adventure {
 		}
 	}
 	
-	public String AdventureInfo()
+	public String adventureInfo()
 	{
 		String output = "Players: " + playerCount + " | " + 
 			"Average Level: " + avgLevel + " | " +
 			"Chapters: " + chapters;
 		return output;
 	}
+	
+	public String adventureOutput()
+	{
+		String output = new String();
+		
+		output += adventureInfo();
+		output += "\n"; 
+		for (int i = 0; i < chapters.size(); i++)
+		{
+			List<String> chapterFlavor = chapters.get(i).getFlavor();
+			
+			output += "CHAPTER " + (i + 1);
+			output += "\n";
+			
+			for (int n = 0; n < chapterFlavor.size(); n++)
+			{
+				output += chapterFlavor.get(n);
+				output += "\n";
+			}
+			
+			output += "\n";
+		}
+		
+		return output;
+	}
+	
 }
