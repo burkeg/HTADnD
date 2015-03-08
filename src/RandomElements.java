@@ -14,11 +14,12 @@ public class RandomElements {
 	public List<String> listAdjectivesObject = new ArrayList<String>(); //List of adjectives that describe a thing
 	public List<String> listGoals = new ArrayList<String>(); //List of goals that a person might have.
 	public List<String> listEnchantments = new ArrayList<String>(); //List of enchantments for weapons/armor/items
+	public List<String> listObjects = new ArrayList<String>(); //List of objects
 	public String[] chapterSubjects = {"Assassination Mission", "Steal Item", "Defend Place",
 			"Defend People", "Convince NPC", "Slay Monsters (Massacre)",
 			"Slay Monsters (Boss)", "Massacre Innocents", "Escape",
 			"Find an Item", "Explore a Place"};
-	
+		
 	//Load the list elements for the selected list. 
 	//Separate from FileHandling.readFile for extensibility.
 	public void loadListElements(List<String> listElements, String fileName)
@@ -40,6 +41,20 @@ public class RandomElements {
 	{
 		int index = Main.randNum(0,getList.size());
 		return getList.get(index);
+	}
+	
+	public String replaceWithRandom(String input)
+	{
+		String output = input;
+		output = output.replaceAll("%ADJPERSON", getRandom(getListAdjectivesPerson()));
+		output = output.replaceAll("%ADJOBJECT", getRandom(getListAdjectivesObject()));
+		output = output.replaceAll("%RACE", getRandom(getListRaces()));
+		output = output.replaceAll("%CLASS", getRandom(getListClasses()));
+		output = output.replaceAll("%ENEMYCLASS", getRandom(getListEnemyClasses()));
+		output = output.replaceAll("%DEITY", getRandom(getListDeities()));
+		output = output.replaceAll("%GOAL", getRandom(getListGoals()));
+		output = output.replaceAll("%ENCHANTMENT", getRandom(getListEnchantments()));
+		return output;
 	}
 	
 	public List<String> getListRaces()
