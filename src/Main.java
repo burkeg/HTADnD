@@ -17,6 +17,7 @@ public class Main {
 		int bossCount = 0; // this is the count of enemies that are actually
 							// named. the count of these are NOT considered in
 							// the enemycount.
+		int chapterCount = 1; //this is the count of chapters that is desired from the generator.
 
 		elements.loadListElements(elements.getListClasses(), "src/resource/classes.txt");
 		elements.loadListElements(elements.getListDeities(), "src/resource/deities.txt");
@@ -38,12 +39,15 @@ public class Main {
 		
 		for(int i = 0; i < bossCount; i++)
 		{
-			//bosses.add(NameGenerator.makeName());
+			DnDCharacter temp = new DnDCharacter(NameGenerator.makeName());
+			temp.randomizeCharacter();
+			bosses.add(temp);
 		}
 		
 		for(int i = 0; i < enemyCount; i++)
 		{
-			//enemyNames.add(elements.listEnemyClasses.get(randNum(0, elements.listEnemyClasses.size())));
+			DnDCharacter temp = new DnDCharacter();
+			enemies.add(temp);
 		}
 }
 
