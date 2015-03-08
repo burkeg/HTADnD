@@ -23,6 +23,9 @@ public class Main {
 		MapGenerator map = new MapGenerator(300, 400);
 		map.makeBiome(0, 0, 300, 400, 400); //x, y, boxWidth, boxHeight
 		map.printMap();
+		
+		MapDraw drawnMap = new MapDraw(300, 400, map);
+		drawnMap.setMap(map.getMap());
 }
 
 	static int randNum(int min, int max) {

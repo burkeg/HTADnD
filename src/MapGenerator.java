@@ -51,6 +51,7 @@ public class MapGenerator {
 						map[i][j] += 87;
 					if (map[i][j] >= 'a') {
 						System.out.print((char) map[i][j] + " ");
+						map[i][j] -= 87;
 						continue;
 					}
 					System.out.print(map[i][j] + " ");
