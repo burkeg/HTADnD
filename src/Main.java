@@ -21,17 +21,21 @@ public class Main {
 		elements.loadListElements(elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 		elements.loadListElements(elements.getListMonsters(), "src/resource/Monsters.txt");
 		
-		MapGenerator map = new MapGenerator(300, 400);
-		map.makeBiome(0, 0, 300, 400, 2300); //x, y, boxWidth, boxHeight, blotches
-		map.printMap();
+		int width = 459;
+		int height = 475;
 		
-		MapDraw drawnMap = new MapDraw(300, 400, map);
+		MapArrayGenerator map = new MapArrayGenerator(width, height);
+		map.makeBiome(0, 0, width, height, 4200); //x, y, boxWidth, boxHeight, blotches
+		map.printMap();
+				
+		MapDraw drawnMap = new MapDraw(width, height, map);
 		drawnMap.setColorMap(map.getMap());
+		drawnMap.makeSquare(100, 100, 15);
 		drawnMap.saveImage();
 		
 		int highest = 0;
-		for (int j = 0; j < 400; j++) {
-			for (int i = 0; i < 300; i++) {
+		for (int j = 0; j < height; j++) {
+			for (int i = 0; i < width; i++) {
 				if (map.getMap()[i][j] > highest)
 					highest = map.getMap()[i][j];
 			}

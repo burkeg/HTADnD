@@ -7,8 +7,8 @@ public class ColoringBook
 	public int horiz;
 	public int vert;
 	BufferedImage im;
-	MapGenerator genColorMap;
-	public ColoringBook(int width, int height, MapGenerator map)
+	MapArrayGenerator genColorMap;
+	public ColoringBook(int width, int height, MapArrayGenerator map)
 	{
 		horiz=width;
 		vert=height;
@@ -26,7 +26,7 @@ public class ColoringBook
 
 	}
 	
-	public MapGenerator getColorIm()
+	public MapArrayGenerator getColorIm()
 	{
 		return genColorMap;
 	}

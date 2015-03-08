@@ -1,11 +1,11 @@
 import java.util.Random;
 
-public class MapGenerator {
+public class MapArrayGenerator {
 	int[][] map;
 	int width;
 	int height;
 
-	public MapGenerator(int width, int height) {
+	public MapArrayGenerator(int width, int height) {
 		this.width = width;
 		this.height = height;
 		map = new int[width][height];
@@ -27,7 +27,7 @@ public class MapGenerator {
 			}
 		}
 	}
-
+	
 	public void makeCircle(int x, int y, int radius, double noise) {
 
 		for (int j = y - radius; j < y + radius && j >= 0 && j < height; j++) {
@@ -69,7 +69,7 @@ public class MapGenerator {
 		while (count > 0) {
 			int originX = randNum(x, x + boxWidth);
 			int originY = randNum(y, y + boxHeight);
-			makeCircle(originX, originY, randNum(3, 10), 0.9);
+			makeCircle(originX, originY, randNum(3, 10), 0.80);
 			count--;
 		}
 

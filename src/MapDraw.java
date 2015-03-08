@@ -8,7 +8,7 @@ public class MapDraw {
 	int width;
 	int height;
 	BufferedImage bi;
-	MapGenerator genMap;
+	MapArrayGenerator genMap;
 	
 	public BufferedImage getImage() {
 		return bi;
@@ -23,7 +23,7 @@ public class MapDraw {
 		}
 	}
 
-	public MapDraw(int width, int height, MapGenerator map) {
+	public MapDraw(int width, int height, MapArrayGenerator map) {
 		this.width = width;
 		this.height = height;
 		bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -44,6 +44,16 @@ public class MapDraw {
 		}
 	}
 	
+	public void makeSquare(int x, int y, int diameter) {
+		
+		for (int j = y - diameter / 2; j < y + diameter / 2 && j >= 0 && j < height; j++) {
+			for (int i = x - diameter / 2; i < x + diameter / 2 && i >= 0 && i < width; i++) {
+						grayscale(i, j, 10);
+			}
+		}
+	}
+
+	
 	public void setColorMap(int[][] mapValue) {
 		mapValue = genMap.getMap();
 		for (int j = 0; j < height; j++) {
@@ -56,8 +66,8 @@ public class MapDraw {
 	public void colorIt(int x, int y, int mapNum) {
 		int modifier = (int) (((double) mapNum / 30.0) * 255); // red component 0...255
 		int g = modifier;// green component 0...255
-		int b = (modifier-130);// blue component 0...255
-		int r = (modifier-170);
+		int b = (modifier-120);// blue component 0...255
+		int r = (modifier-160);
 		int col = (r << 16) | (g << 8) | b;
 		bi.setRGB(x, y, col);
 
