@@ -9,7 +9,8 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.swt.widgets.Table;
-// not sure what this is for, but it doesn't work: import org.eclipse.wb.swt.SWTResourceManager;
+//import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.widgets.Canvas;
 
 
 public class HTADnD 
@@ -20,8 +21,8 @@ public class HTADnD
 	private Text avgPlayerLvl;
 	private Text chaptCount;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
-	private Table chaptOutTable;
 	private Text enemiesAndBossesOut;
+	private Text chaptOut;
 
 	/**
 	 * Launch the application.
@@ -64,7 +65,7 @@ public class HTADnD
 	protected void createContents() 
 	{
 		shlDndGeneratorV = new Shell();
-		shlDndGeneratorV.setSize(450, 516);
+		shlDndGeneratorV.setSize(782, 516);
 		shlDndGeneratorV.setText("DnD Generator V.6");
 		shlDndGeneratorV.setLayout(null);
 		
@@ -96,6 +97,43 @@ public class HTADnD
 		chaptCount.setText("1");
 		
 		Button clearBtn = new Button(shlDndGeneratorV, SWT.NONE);
+		clearBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) 
+			{
+				try
+				{
+					numPlayer.setText("###");
+					avgPlayerLvl.setText("###");
+					chaptCount.setText("1");
+				}
+				catch(Exception exc)
+				{
+					exc.printStackTrace();
+					return;
+				}
+				try
+				{
+					enemiesAndBossesOut.selectAll();
+					enemiesAndBossesOut.clearSelection();
+				}
+				catch(Exception exc)
+				{
+					exc.printStackTrace();
+					return;
+				}
+				try
+				{
+					chaptOut.selectAll();
+					chaptOut.clearSelection();
+				}
+				catch(Exception exc)
+				{
+					exc.printStackTrace();
+					return;
+				}
+			}
+		});
 		clearBtn.setBounds(349, 442, 75, 25);
 		clearBtn.setToolTipText("Clear ALL");
 		clearBtn.setText("Clear");
@@ -103,7 +141,8 @@ public class HTADnD
 		Button addChapters = new Button(shlDndGeneratorV, SWT.NONE);
 		addChapters.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void widgetSelected(SelectionEvent e) 
+			{
 				int chapters, playLvlAvg, playerNum;
 				try 
 				{
@@ -132,6 +171,7 @@ public class HTADnD
 					MessageDialog.openError(shlDndGeneratorV, "Entry Error", "Invalid number of players (Wrong Type)");
 					return;
 				}
+				Adventure journey = new Adventure(playerNum, playLvlAvg, chapters);
 			}
 		});
 		addChapters.setBounds(186, 442, 157, 25);
@@ -156,14 +196,6 @@ public class HTADnD
 		checkGenQuest.setToolTipText("Select this checkbox if you would like a quest to be generated");
 		checkGenQuest.setText("Generate Quest Line");
 		
-		chaptOutTable = formToolkit.createTable(shlDndGeneratorV, SWT.NONE);
-		chaptOutTable.setBounds(136, 125, 288, 311);
-		chaptOutTable.setEnabled(false);
-		chaptOutTable.setToolTipText("This is where chapters will be output to");
-		formToolkit.paintBordersFor(chaptOutTable);
-		chaptOutTable.setHeaderVisible(true);
-		chaptOutTable.setLinesVisible(true);
-		
 		enemiesAndBossesOut = formToolkit.createText(shlDndGeneratorV, "New Text", SWT.NONE);
 		enemiesAndBossesOut.setBounds(10, 177, 120, 259);
 		enemiesAndBossesOut.setToolTipText("This is where enemies and bosses will be output to");
@@ -175,7 +207,21 @@ public class HTADnD
 		lblChapters.setText("Chapters");
 		
 		Label lblEnemiesAndBosses = formToolkit.createLabel(shlDndGeneratorV, "Enemies and Bosses", SWT.NONE);
-		lblEnemiesAndBosses.setBounds(10, 152, 120, 15);
+		lblEnemiesAndBosses.setBounds(10, 156, 120, 15);
+		
+		chaptOut = new Text(shlDndGeneratorV, SWT.BORDER);
+		chaptOut.setBounds(136, 125, 207, 311);
+		formToolkit.adapt(chaptOut, true, true);
+		
+		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
+		MapViewer.setBounds(357, 21, 399, 415);
+		formToolkit.adapt(MapViewer);
+		formToolkit.paintBordersFor(MapViewer);
+		
+		Label lblMapalsoAvailible = new Label(shlDndGeneratorV, SWT.NONE);
+		lblMapalsoAvailible.setBounds(360, 0, 332, 15);
+		formToolkit.adapt(lblMapalsoAvailible, true, true);
+		lblMapalsoAvailible.setText("Map: (also availible as a PNG image)");
 
 	}
 }
