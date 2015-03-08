@@ -42,6 +42,7 @@ public class HTADnD
 			Main.elements.loadListElements(Main.elements.getListAdjectivesObject(), "src/resource/adjectives-objects.txt");
 			Main.elements.loadListElements(Main.elements.getListEnemyClasses(), "src/resource/enemyclasses.txt");
 			Main.elements.loadListElements(Main.elements.getListMonsters(), "src/resource/monsters.txt");
+			Main.elements.loadListElements(Main.elements.getListObjects(), "src/resource/objects.txt");
 			
 			HTADnD window = new HTADnD();
 			window.open();

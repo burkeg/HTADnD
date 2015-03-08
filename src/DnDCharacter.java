@@ -172,8 +172,10 @@ public class DnDCharacter {
 		chaLevel += addlevel;
 	}
 	
-	public string serialize();
+	public String serialize()
 	{
+		String output = new String();;
 		
+		return output;
 	}
 }

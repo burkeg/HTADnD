@@ -53,15 +53,7 @@ public class RandomElements {
 	public String replaceWithRandom(String input)
 	{
 		String output = input;
-		while (output.indexOf("%ADJPERSON") != -1
-				&& output.indexOf("%ADJOBJECT") != -1
-				&& output.indexOf("%RACE") != -1
-				&& output.indexOf("%CLASS") != -1
-				&& output.indexOf("%ENEMYCLASS") != -1
-				&& output.indexOf("%DEITY") != -1
-				&& output.indexOf("%GOAL") != -1
-				&& output.indexOf("%ENCHANTMENT") != -1
-				) //while there's a %macro present in the input string...  
+		while (checkReplace(output) == true) //while there's a %macro present in the input string...  
 		{
 			output = output.replaceFirst("%ADJPERSON", getRandom(getListAdjectivesPerson()));
 			output = output.replaceFirst("%ADJOBJECT", getRandom(getListAdjectivesObject()));
@@ -71,8 +63,28 @@ public class RandomElements {
 			output = output.replaceFirst("%DEITY", getRandom(getListDeities()));
 			output = output.replaceFirst("%GOAL", getRandom(getListGoals()));
 			output = output.replaceFirst("%ENCHANTMENT", getRandom(getListEnchantments()));
+			output = output.replaceFirst("%MONSTER", getRandom(getListMonsters()));
+			output = output.replaceFirst("%OBJECT", getRandom(getListObjects()));
 		}
 		return output;
+	}
+	
+	private boolean checkReplace (String input)
+	{
+		if(input.indexOf("%ADJPERSON") > -1
+			|| input.indexOf("%ADJOBJECT") > -1
+			|| input.indexOf("%RACE") > -1
+			|| input.indexOf("%CLASS") > -1
+			|| input.indexOf("%ENEMYCLASS") > -1
+			|| input.indexOf("%DEITY") > -1
+			|| input.indexOf("%GOAL") > -1
+			|| input.indexOf("%ENCHANTMENT") > -1
+			|| input.indexOf("%MONSTER") > -1)
+		{
+			return true; //If any of them are > -1, something needs to be replaced.
+		}
+		
+		return false; //Does not need to have anything replaced
 	}
 	
 	public List<String> getListRaces()
@@ -113,6 +125,11 @@ public class RandomElements {
 	public List<String> getListEnchantments()
 	{
 		return listEnchantments;
+	}
+	
+	public List<String> getListObjects()
+	{
+		return listObjects;
 	}
 	
 	public List<String> getListMonsters()

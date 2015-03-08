@@ -1,0 +1,17 @@
+crown
+jewel
+tiara
+phylactery
+escutcheon
+staff
+necklace
+orb
+cloak
+shroud
+greaves
+talisman
+chalice
+mask
+throne
+flute
+pennywhistle

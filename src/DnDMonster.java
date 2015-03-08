@@ -12,8 +12,8 @@ public class DnDMonster
 	
 	public DnDMonster()
 	{
-		monsterSpecies = monSpecies;
-		monsterLevel = monLevel;
+		monsterSpecies = "Monster";
+		monsterLevel = 1;
 	}
 	
 
@@ -21,12 +21,12 @@ public class DnDMonster
 	{
 		if(monsterSpecies.length() <= 0)
 		{
-			monsterSpecies = Main.elements.getRandom(Main.elements.getListMonster()); 
+			monsterSpecies = Main.elements.getRandom(Main.elements.getListMonsters()); 
 		}
 		
-		if(monsterLevel.length() <= 0)
+		if(monsterLevel <= 0)
 		{
-			monsterLevel = Main.elements.getRandom(Main.elements.getListClasses());
+			monsterLevel = Main.randNum(1, 30);
 		}
 	}
 	
