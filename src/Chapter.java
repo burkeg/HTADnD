@@ -36,7 +36,22 @@ public class Chapter
 					Flavor.add("Stab: you stab th)
 						
 					break;
-					case 1:
+					case 1: Flavor.add(Main.elements.replaceWithRandom("Surely you've heard of the mad assassin? Kept in the chambers of the castle? "
+							+ "Set high above the kingdom, held aloft in the recesses of the mightiest towers, "
+							+ "where the royalty uses them? They sate the assassin's needs, feed him, clothe him, and prepare him?"
+							+ "+ Tonight, you have been ordered to kill the mad assassin. you wait in the shadows, keeping a watchful"
+							+ " eye on the Assassin's tower walls. suddenly, the bricks split apart. out creeps a man in black, wearing a %ADJOBJECT"
+							+ " horse mask. Decide what to do before he eludes you."));
+					Flavor.add(Main.elements.replaceWithRandom("Charge: you swing your mighty weapons in fury as you charge the Mad assassin. However, he is quicker. "
+							+ " You crash into the wall, finding a %ADJOBJECT, %ADJOBJECT dagger stuck into your upper arm."));
+					Flavor.add(Main.elements.replaceWithRandom("Sneak: you sneak behind the mad assassin, and it appears he senses nothing."
+							+ " Your blade is quick, digging into his back. suddenly, he disappears. his clothing falls to the ground. upon searching it,"
+							+ " you find a hidden pocket, and in it rests a %ENCHANTMENT totem."));
+					Flavor.add(Main.elements.replaceWithRandom("Follow: You follow the mad assassin through the alleys and the bazaar. he stops in an outhouse, "
+							+ "and when he comes out, he is no longer wearing his uniform, and  you learn that the mad assassin is actually a she!! "
+							+ "you follow her, where she returns home to her husband and"
+							+ " children, and through the window, you watch them make love. all of them. why would you follow her? thats creepy stalker, bro."
+
 					break;
 				}
 				break;
@@ -134,7 +149,7 @@ public class Chapter
 					break;
 					case 1:
 						/*
-						 * [10:31:26 PM] Tri of Mana: Surely you've heard of the mad assassin? Kept in the chambers of the castle? Set high above the kingdom, held aloft in the recesses of the mightiest towers, where the royalty uses them? They sate the assassin's needs, feed him, clothe him, and prepare him?"
+						 * 
 						 */
 					break;
 				}
