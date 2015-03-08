@@ -232,7 +232,7 @@ public class HTADnD
 		
 		Canvas MapViewer = new Canvas(shlDndGeneratorV, SWT.NONE);
 		//Device device = new Device();
-		Image image = new Image(display, "C:/Users/Jackson/Documents/GitHub/HTADnDUI/terrain.png"); 
+		Image image = new Image(display, "terrain.png"); 
 		MapViewer.setBounds(357, 21, 399, 415);
 		formToolkit.adapt(MapViewer);
 		formToolkit.paintBordersFor(MapViewer);
