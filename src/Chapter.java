@@ -85,7 +85,7 @@ public class Chapter
 		case 2: //This is the case for the DEFEND PLACE Mission
 			Flavor.add("CHAPTER: DEFEND!");
 				    Flavor.add("You are informed by the Captain of the Guard that the city is in need of soldiers, and mercenaries will be well compensated.");
-					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are payed respectfully.");
+					Flavor.add("defend the city: You shoot down a horde of barbarians from the safety of the city walls, and are paid respectfully.");
 					Flavor.add("get hurt: you were not skilled enough to be a mercenary, and you accidentally shoot an arrow into your foot. you hurt yourself"
 							+ "and your dignity.");
 				break;
@@ -143,7 +143,7 @@ public class Chapter
 
 		case 5: //This is the case for the SLAY MONSTER Mission
 			Flavor.add("CHAPTER: SLAY MONSTER!");
-			Flavor.add("You come across a lone beast, raving mad and completely %ABJPERSON. it charges at you but you raise your sheild just in time!");
+			Flavor.add("You come across a lone beast, raving mad and completely %ABJPERSON. it charges at you but you raise your shield just in time!");
 			
 		case 6: //This is the case for the SLAY MONSTERS (BOSS) Mission
 			Flavor.add("CHAPTER: SLAY BOSS!");
@@ -151,7 +151,7 @@ public class Chapter
 							+ "you find the forbidden grips of an undead tomb. Within them, kept by surly, cold airs, is the %MONSTER. "
 							+ "His soul kept secure by %DEITY, he remains ever-%ADJPERSON, and continually "
 							+ "%ADJPERSON. His dark, ominous staff is "
-							+ "%ADJOBJECT, iconoclastic and illicit. When you hear his voice, you brace for the %ADJOBJECT happenings that follow its wake. you raise your sheilds against his %ADJOBJECT breath,"
+							+ "%ADJOBJECT, iconoclastic and illicit. When you hear his voice, you brace for the %ADJOBJECT happenings that follow its wake. you raise your shields against his %ADJOBJECT breath,"
 							+ "and prepare for a fight."));
 					break;
 
@@ -180,7 +180,7 @@ public class Chapter
 								+ npcEnemies.get(Main.randNum(0, (npcEnemies.size() -1))).getCName()
 								+ "storms in, flailing a %ADJOBJECT."
 								+ " the gas continues to hurt your lungs and sear your eyes."));
-						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you sheild yourselves from the arrows by diving onto the ground,"
+						Flavor.add(Main.elements.replaceWithRandom("Duck and cover: you shield yourselves from the arrows by diving onto the ground,"
 								+ " and the gas wafts above you. Soon, the air clears and the arrows stop. you find yourself up against "
 								+ (npcEnemies.size() / 2)
 								+ " %RACE "
