@@ -39,6 +39,7 @@ public class MapGenerator {
 	}
 
 	public void printMap() {
+		makeCircle(0, 0, 5);
 		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {	
 				  if (map[i][j] != 0) 
@@ -62,9 +63,18 @@ public class MapGenerator {
 
 	}
 
+	public void makeBiome(int blobs) {
+		boolean[][] trueBiomes = new boolean[5][5];
+		while(blobs > 0) {
+			if (randNum(0, 4) > 0)
+				
+		}
+	}
+	
 	int randNum(int min, int max) {
 		Random rand = new Random();
 		int randomInt = rand.nextInt((max - min) + 1) + min;
 		return randomInt;
 	}
+	
 }
